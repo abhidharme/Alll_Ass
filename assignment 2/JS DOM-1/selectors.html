@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <h5>First H5</h5>
+        <h5>Second H5</h5>
+        <h5>Third H5</h5>
+        <div class="green">First DIV</div>
+        <div class="red">Second DIV</div>
+        <div class="blue">Third DIV</div>
+        <p class="green">First P</p>
+        <p class="red">Second P</p>
+        <p class="blue">Third P</p>
+        <hr/>
+        <button onclick="fun1()">Change H1</button>
+        <button onclick="fun2()">Change H3</button>
+        <button onclick="fun3()">Change H5</button>
+        <button onclick="fun4()">Change Green</button>
+        <button onclick="fun5()">Change Red</button>
+        <button onclick="fun6()">Change Blue</button>
+</body>
+</html>
+
+<script>
+function fun1(){
+    document.querySelector("h1").style.color = "red";
+}
+function fun2(){
+    var elem = document.querySelectorAll("h3");
+    for(var i=0 ; i<elem.length ; i++){
+        elem[i].style.color = "green";
+    }
+}
+    function fun3(){
+        var elem2 = document.querySelectorAll("h5");
+        for(var i=0 ; i < elem2.length ; i++){
+            elem2[i].style.color = "blue";
+        }
+    }
+    function fun4(){
+        var elem3 = document.querySelectorAll(".green");
+        for(var i=0 ; i < elem3.length ; i++){
+            elem3[i].style.color = "green";
+        }
+    }
+    function fun5(){
+        var elem4 = document.querySelectorAll(".red");
+        for(var i=0 ; i<elem4.length ; i++){
+            elem4[i].style.color = "red";
+        }
+    }
+        function fun6(){
+        var elem5 = document.querySelectorAll(".blue");
+        for(var i=0 ; i < elem5.length ; i++){
+            elem5[i].style.color = "blue";
+        }
+    }
+    
+</script>

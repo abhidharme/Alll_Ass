@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display:flex;
+            width: 500px;
+            margin-right: 10px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var div = document.createElement("div");
+    var div1 = document.createElement("div");
+    var div2 = document.createElement("div");
+    var image = document.createElement("img");
+    var head = document.createElement("h4");
+    var para = document.createElement("p");
+    var btn = document.createElement("button");
+    
+    image.setAttribute("src" , "https://via.placeholder.com/170x200");
+    head.textContent = "Alice Liddel";
+    para.textContent = "Alice is a freelance web designer and devloper based in London. She is specialized in HTMLS, CSSB,JavaScript , Bootstrap etc.";
+    btn.textContent = "View Profile";
+    div1.style.marginRight = "10px";
+    btn.style.backgroundColor = "blue";
+    btn.style.color = "white";
+    btn.style.borderRadius = "5px";
+    div2.style.display ="flex";
+    div1 
+    
+    .style.border = "1px solid black"
+
+    div.append(image);
+    div1.append(head,para,btn);
+div2.append(div,div1);
+    var body = document.querySelector("body");
+
+    body.append(div2)
+
+</script>

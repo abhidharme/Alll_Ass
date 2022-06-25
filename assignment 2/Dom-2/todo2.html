@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=a, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th,td{
+            border: 1px solid black;
+            padding: 10px;
+            box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <form id="myform">
+        <label>Name</label>
+        <input id="name" type="text" placeholder="Enter todo" />
+        <label>Quantity</label>
+        <input id="qty" type="number" placeholder="Enter Quantity"/>
+        <label>Priority</label>
+        <select id="prt" >
+            <option value="">--</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+        <input type="Submit" value="submit"/>
+        <table >
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Priority</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+    </form>
+</body>
+</html>
+
+
+<script>
+    
+    document.querySelector("#myform").addEventListener("submit" , addItem);
+    var myarr = JSON.parse(localStorage.getItem("todoList"))  || [];
+
+
+    display(myarr);
+
+    function addItem(event){
+        event.preventDefault();
+        
+        var name = document.querySelector("#name").value;
+        var qty = document.querySelector("#qty").value;
+        var priority = document.querySelector("#prt").value;
+
+        var todoObj = {
+            itemName: name,
+            itemQty: qty,
+            itemPriority: priority,
+        };
+        console.log(todoObj);
+ 
+         myarr.push(todoObj);
+         console.log(myarr );
+         localStorage.setItem("todoList" , JSON.stringify(myarr));
+         
+       
+        display(myarr);
+    }
+   function display(myarr){
+       document.querySelector("tbody").innerHTML = "";
+    myarr.map(function (elem,index){
+
+            
+var row = document.createElement("tr");
+
+var td1 = document.createElement("td");
+td1.textContent = elem.itemName;
+console.log(td1);
+
+var td2 = document.createElement("td");
+td2.textContent = elem.itemQty;
+
+var td3 = document.createElement("td");
+td3.textContent = elem.itemPriority;
+if(elem.itemPriority == "High"){
+    td3.style.backgroundColor = "red";
+}
+
+var td4 = document.createElement("td");
+td4.textContent = "Detele";
+td4.addEventListener("click" , function (){
+    delettask(index)});
+
+row.append(td1,td2,td3,td4);
+
+document.querySelector("tbody").append(row);
+ });
+   
+   }
+    function delettask(index){
+        myarr.splice(index,1);
+ localStorage.setItem("todoList" , JSON.stringify(myarr));
+ display(myarr);
+    }
+</script>

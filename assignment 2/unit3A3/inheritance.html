@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+var family = {
+    surname: "gada",
+    address: "Gokuldham Society , Mumbai",
+    Flat_No: "A15",
+
+    };
+
+    var grandP = Object.create(family);
+    grandP.grand_parent_name = "champaklal";
+    
+    var Father = Object.create(grandP);
+    Father.father_name = "Jethalal";
+    
+
+    let son = Object.create(Father);
+    son.son_name = "Tappu";
+
+    console.log(son);
+
+    console.log(son.father_name)
+
+//  function family(n){
+//      this.Flat_No =  "A15";
+//      this.address = "Gokuldham Society , Mumbai";
+//      this.surname =  "gada";
+//      this.name = n;
+     
+     
+// }
+// var grandFather = new family("champaklal");
+// var father = new family("jethalal");
+// var son = new family("tappu");
+// console.log(grandFather, father, son);
+
+
+
+    
+</script>

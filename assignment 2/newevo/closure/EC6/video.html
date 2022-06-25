@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://kit.fontawesome.com/683b4b40e3.js"
+    crossorigin="anonymous"
+    >
+    </script>
+    <style>
+        div{
+            border: 1px solid transparent;
+        }
+        #div3{
+            border: 1px solid rgb(160, 160, 160);
+            height: 100px;
+            width: 100%;
+          display: flex;
+          margin-top: 5px;
+          
+        }
+        #thumb{
+            width: 50%;
+            height: 100%;
+        }
+        /* #navbar{
+            height: 100px;
+        } */
+        #main{
+            display: flex;
+            height: 500px;
+            gap:10px;
+        }
+        #video_details{
+            flex:3;
+            margin-top: 5px;
+        }
+        #recommendation{
+
+       flex:1.5;
+       overflow: auto;
+        }
+
+
+        #Yimg{
+            margin-top: 20px;
+        }
+        #inputdiv{
+            display: flex;
+        }
+        #logo{
+          
+             font-size: 23px;
+        }
+        #Y{
+            margin-left: 20px;
+            margin-top: 36px;
+        }
+        #home{
+            margin-top: 35px;
+            
+            font-size: 35px;
+        }
+        p{
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+        }
+        #b{
+            border: 3px solid black;
+            width: 40px;
+            height: 25px;
+            margin: auto;
+            margin-top: 35px;
+        }
+        #c{
+            border: 3px solid black;
+            width: 14px;
+            padding: 10px;
+            margin: auto;
+            margin-top: 35px;
+        }
+        #h{
+            margin-top: 4px;
+            
+        }
+        #box2{
+            border: 1px solid transparent;
+            width: 80px;
+            height: 400px;
+        }
+        #box1{
+            
+           width: 95%;
+            height: 100px;
+        }
+        #id1{
+            border: 1px solid rgb(168, 168, 168);
+            width: 50%;
+            height: 42px;
+            margin-top: 33px;
+            margin-left: 40px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+            font-size: 18px;
+            
+        }
+        #btn{
+            border: 1px solid rgb(168, 168, 168);
+            width: 5%;
+           
+            height: 46px;
+            margin-top: 33px;
+            
+
+        }
+        body{
+            display: flex;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="navbar">Navbar -->
+
+        <div id="box2">
+            <img id="Y" src="https://th.bing.com/th/id/OIP.dmkNDDHH5JxHXzP92Ohm1gHaHa?pid=ImgDet&rs=1" height="30px" width="30px"/>
+            <p ><i onclick="videoS()" id="home" class="fas fa-home"></i></p>
+            <p id="pp">Home</p>
+            <p><i id="home" class="far fa-compass "></i></p>
+            <p>Explore</p>
+            <p id="b"><i id="h" class="fas fa-play"></i></p>
+            <p>Subscriptions</p>  
+            <p id="c"><i id="h" class="fas fa-play"></i></p>
+            <p>Library</p>
+    
+        </div>
+
+        <div id="box1">
+            <div id="inputdiv">
+            <img id="Yimg" src="https://www.bing.com/th?id=OIP.bU0knxreaQXt5Lv8DNTY_wHaEK&w=176&h=99&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" height="70px" width="120px"/>
+    <input type="text" id="id1" placeholder="Search">
+    <button id="btn" onclick="videosearch()"><i id="logo" class="fas fa-search"></i></button>
+    </div>
+    <hr>
+    
+    <div id="main">
+  
+        <div id="video_details"></div>
+
+        <div id="recommendation"></div>
+    </div>
+    </div>
+
+   
+</div>
+</body>
+</html>
+
+<script>
+
+
+let API = "AIzaSyD_JXPK8OCGC00zOEwbbKnd780sHgX5IH8"
+//let darr = [];
+let count =0;
+
+async function videosearch(tesla){
+        try{
+          
+            let video_query = document.getElementById("id1").value;
+           
+
+            let responce = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${tesla}||${video_query}&type=video&key=${API}&maxResults=40&part=snippet`);
+          let data = await responce.json();
+          let Youtubevideodata = data.items;
+         // console.log(Youtubevideodata);
+    //   let video_query =    document.getElementById("id1").value;
+    //       darr.push(video_query);
+    //       localStorage.setItem("newarr" , JSON.stringify(darr));
+         recom(Youtubevideodata);
+        }
+
+        catch(err){
+            console.log(err);
+        }
+    }
+    
+ // let newval =   JSON.parse(localStorage.getItem("newarr"));
+  //newval = document.getElementById("id1").value;
+
+
+// console.log(newval);
+
+//if(count <= 0){
+    
+  
+    let newval =   JSON.parse(localStorage.getItem("newarr"));
+    console.log(newval,count);
+    videosearch(newval)
+//}
+
+    // let video_query = document.getElementById("id1").value;
+    // videosearch(video_query)
+
+   
+
+
+
+
+
+
+
+
+
+
+
+    let {snippet,videoId} = JSON.parse(localStorage.getItem("clicked_video"));
+
+    let video_div = document.getElementById("video_details")
+  
+    let iframe = document.createElement("iframe");
+
+    iframe.src = `https://www.youtube.com/embed/${videoId}`
+//console.log(videoId);
+    iframe.height = "100%";
+
+    iframe.width = "100%";
+    iframe.setAttribute("allowfullscreen" , "true");
+
+    video_div.append(iframe);
+
+
+    function  recom(newdata){
+        document.getElementById("recommendation").textContent = "";
+        newdata.map(function({snippet,id:{videoId}}){
+    var div3 = document.createElement("div");
+             div3.setAttribute("id" , "div3")
+
+    var Title = document.createElement("p");
+Title.textContent = snippet.title;
+
+    var thumbnails = document.createElement("img");
+thumbnails.src = snippet.thumbnails.medium.url;
+thumbnails.setAttribute("id" , "thumb");
+
+    div3.append(thumbnails,Title);
+document.getElementById("recommendation").append(div3);
+
+
+let data_to_send = {
+    snippet,
+    videoId
+};
+
+div3.onclick = () =>{
+    showVideo(data_to_send);
+}
+
+});
+    }
+
+    function showVideo(data){
+    localStorage.setItem("clicked_video" , JSON.stringify(data));
+
+    window.location.href = "video.html";
+}
+
+    function videoS(){
+        window.location.href = "EC61.html";
+    }
+
+</script>

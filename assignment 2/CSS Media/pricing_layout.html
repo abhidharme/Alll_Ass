@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:grid;
+            width:60%;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 10px;
+            margin:auto;
+            
+
+        }
+        .container>div{
+            border: 1px solid transparent;
+            text-align: center;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+        button{
+            padding: 15px 30px;
+            border-radius: 10px;
+            border-color: blue;
+            background-color: white;
+            color: blue;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: blue;
+            color: white;
+        }
+        #id1{
+            color: green;
+        }
+        #id2{
+            color: red;
+        }
+        #id3{
+            color:skyblue;
+        }
+        @media only screen and (min-width:375px) and (max-width:789px){
+            .container{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+        @media only screen and (min-width:0px) and (max-width:375px){
+            .container{
+                grid-template-columns: repeat(1,1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h3>Starter Plan</h3>
+            <h1 id="id1" >Free</h1>
+            <p><i>per month</i></p>
+            <p>We collect reviews from our users so you get an honet opinion
+                of what an experience with our website.</p>
+                <button >Start Now</button>
+        </div>
+        <div> <h3>Business plan</h3>
+            <h1 id="id2">$39.00</h1>
+            <p><i>per month</i></p>
+            <p>We collect reviews from our users so you get an honet opinion
+                of what an experience with our website.</p>
+                <button>Start Now</button></div>
+        <div>
+            <h3>Premium Plan</h3>
+            <h1 id="id3">$59.00</h1>
+            <p>per month</p>
+            <p>We collect reviews from our users so you get an honet opinion
+                of what an experience with our website.</p>
+                <button >Start Now</button>
+        </div>
+    </div>
+</body>
+</html>

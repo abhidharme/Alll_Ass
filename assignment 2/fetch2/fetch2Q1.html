@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://kit.fontawesome.com/683b4b40e3.js"
+    crossorigin="anonymous"
+    >
+    </script>
+    <style>
+        #map{
+            width: 300px;
+            height: 300px;
+            margin-left: 300px;
+        }
+        body{
+            background-image: url("https://th.bing.com/th/id/R.7ab24566641489d4499ac054e3f56480?rik=qWRlAqEgKSaFzA&riu=http%3a%2f%2fwallpapers-hd-wide.com%2fwp-content%2fuploads%2f2016%2f02%2fbeautiful_ocean_sky_horizon_clouds-1920x1200.jpg&ehk=3B%2fiRZIakLfpq7R3oddllfV5j7%2f7PMQtM90aazcWYFU%3d&risl=&pid=ImgRaw&r=0");
+        }
+        #btn{
+        
+            width: 100px;
+            height: 40px;
+            border: 0px;
+           background-size: contain;
+            background-image: url("https://th.bing.com/th/id/OIP.qwbqP0cPnWFRN0eJHR16GgHaDp?w=329&h=172&c=7&r=0&o=5&pid=1.7")
+          }
+          #cityname{
+            height: 36px;
+            width: 250px;
+            background-color: rgb(149, 230, 255);
+          }
+          #flex{
+              display: flex;
+              margin-top: 30px;
+          }
+          .t1{
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+              width: 100px;
+              height: 150px;
+          }
+          #container{
+              display: flex;
+              text-align: center;
+              gap: 10px;
+              color: white;
+              font-weight: bold;
+              font-family: monospace;
+
+          }
+         
+          img{
+              opacity: 0.4;
+          }
+          #day7{
+           
+            display: flex;
+            gap: 10px;
+color: white;
+          }
+          #day7>div{
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <input type="text" id="cityname" placeholder="Enter City Name" >
+        <button id="btn" onclick="getdata()"> Search</button>
+    </div>
+    <div id="flex">
+    <div id="container">
+<div class="t1">
+    <img src="https://th.bing.com/th/id/OIP.CNpvFtuZh5wEOMkKzRZPkAAAAA?pid=ImgDet&w=193&h=193&c=7" height="60%" width="100%"/>
+    <div class="t2"></div>
+</div>
+<div class="t1">
+    <img src="https://th.bing.com/th/id/OIP.qKepMGIKrQEBhrwNubv1LAHaHa?pid=ImgDet&w=189&h=189&c=7" height="60%" width="100%"/>
+    <div class="t3"></div>
+</div>
+<div class="t1">
+    <img src="https://media.istockphoto.com/vectors/blowing-wind-vector-id485441624" height="60%" width="100%"/>
+    <div class="t4"></div>
+</div>
+<div class="t1">
+    <img src="https://static.vecteezy.com/system/resources/previews/000/609/888/original/vector-cloud-and-sun-data-logo-and-symbols-icons.jpg" height="60%" width="100%"/>
+    <div class="t5"></div>
+</div><div class="t1">
+    <img src="https://media.istockphoto.com/vectors/summer-sunrise-sunny-logo-design-vector-id1157408074?k=6&m=1157408074&s=170667a&w=0&h=SrHMqPDq-O9Lc3CFuaNz_QieEoqaTeeMmllq56v1MdM=" height="60%" width="100%"/>
+    <div class="t6"></div>
+</div>
+<div class="t1">
+    <img src="https://thumbs.dreamstime.com/b/beautiful-sunset-logo-vector-half-sun-mirage-icon-symbol-graphic-design-illustrations-170629419.jpg" height="60%" width="100%"/>
+    <div class="t7"></div>
+</div>
+
+    </div>
+
+    <div id="map">
+ 
+    </div>
+
+</div>
+<h2>---FORECAST NEXT 7 DAT'S DATA---</h2>
+<div id="day7">
+    
+    <div id="day0"></div>
+    <div id="day1"></div>
+    <div id="day2"></div>
+    <div id="day3"></div>
+    <div id="day4"></div>
+    <div id="day5"></div>
+ 
+</div>
+    <!-- <iframe
+  width="250"
+  height="250"
+  style="border:0"
+  loading="lazy"
+  
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBJmHREW1Ey1G8roSY08rt6f7zxbG3n0QU
+    &q=Space+Needle,Seattle+WA">
+</iframe> -->
+<!-- 
+<iframe width="300" height="300" id="gmap_canvas" 
+
+ frameborder="0" 
+ scrolling="no"
+ marginheight="0"
+marginwidth="0"></iframe> -->
+
+</body>
+</html>
+
+<script>
+
+    async function getdata(){
+let city = document.getElementById("cityname").value;
+      //  let res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=21.0964&lon=77.0586&exclude=hourly&appid=eb1e5993818be64b82a938eb7971b2f7`);
+      let res = await fetch(`https://api.openweathermap.org/data/2.5/weather?&lang=fr&q=${city}&appid=eb1e5993818be64b82a938eb7971b2f7&units=metric&units=UTC`)
+        let Wdata =  await res.json();
+        weatherdata(Wdata);
+        console.log(Wdata);
+       
+    }
+
+
+     function weatherdata(Wdata){
+
+        document.querySelector("#map").innerHTML ="";
+        var div1 = document.createElement("div");
+            div1.setAttribute("id" , "div1");
+
+
+            var A = document.createElement("p");
+            A.textContent = `Max-Temp = ${Wdata.main.temp_max}°`;
+
+            var B = document.createElement("p");
+            B.textContent = `Min-Temp = ${Wdata.main.temp_min}°`;
+             
+            var C = document.createElement("p");
+            C.textContent = `Wind-Speed = ${Wdata.wind.speed}km/s`;
+
+            var D = document.createElement("p");
+            D.textContent = `clouds = ${Wdata.clouds.all}`;
+
+            var E = document.createElement("p");
+            E.textContent = `sunrise = ${Wdata.sys.sunrise}`;
+
+            var F = document.createElement("p");
+            F.textContent = `sunset = ${Wdata.sys.sunset}`;
+          
+
+           var XX = Wdata.coord.lon
+           var YY = Wdata.coord.lat
+           get7daydata(XX,YY);
+
+            document.querySelector(".t2").innerHTML = "";
+            document.querySelector(".t3").innerHTML = "";
+            document.querySelector(".t4").innerHTML = "";
+            document.querySelector(".t5").innerHTML = "";
+            document.querySelector(".t6").innerHTML = "";
+            document.querySelector(".t7").innerHTML = "";
+            document.querySelector(".t2").append(A);
+            document.querySelector(".t3").append(B);
+            document.querySelector(".t4").append(C);
+            document.querySelector(".t5").append(D);
+            document.querySelector(".t6").append(E);
+            document.querySelector(".t7").append(F);
+           //document.getElementById("container").innerHTML = "";
+           // document.getElementById("container").append(div1);
+
+
+            let city = document.getElementById("cityname").value;
+
+var iframe = document.createElement("iframe");
+ iframe.src= `https://maps.google.com/maps?q=${city}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+ iframe.width="100%";
+ iframe.height="100%";
+      document.querySelector("#map").append(iframe);
+     }
+
+
+
+     // forecast data
+
+     async function get7daydata(XX,YY){
+//let city = document.getElementById("cityname").value;
+        let res = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${YY}&lon=${XX}&exclude=hourly&appid=eb1e5993818be64b82a938eb7971b2f7&units=metric`);
+        let W7data =  await res.json();
+        weather7daydata(W7data);
+        console.log(W7data);
+       
+    }
+
+
+    function weather7daydata(arr){
+      arr.daily.map((elem,index) => {
+
+if(index == 0){
+        var D = document.createElement("p");
+            D.textContent = `Max-Temp = ${elem.temp.max}`;
+            var E = document.createElement("p");
+            E.textContent = `Min-Temp = ${elem.temp.min}`;
+            document.querySelector("#day0").innerHTML = "";
+            document.querySelector("#day0").append(D,E)    
+            
+}
+ if(index == 1){
+    var D = document.createElement("p");
+            D.textContent = `Max-Temp = ${elem.temp.max}`;
+            var E = document.createElement("p");
+            E.textContent = `Min-Temp = ${elem.temp.min}`; 
+            document.querySelector("#day1").innerHTML = "";
+            document.querySelector("#day1").append(D,E)     
+}
+ if(index == 2){
+    var D = document.createElement("p");
+            D.textContent = `Max-Temp = ${elem.temp.max}`;
+            var E = document.createElement("p");
+            E.textContent = `Min-Temp = ${elem.temp.min}`;
+            document.querySelector("#day2").innerHTML = "";  
+            document.querySelector("#day2").append(D,E)     
+}     
+
+ if(index == 3){
+    var D = document.createElement("p");
+            D.textContent = `Max-Temp = ${elem.temp.max}`;
+            var E = document.createElement("p");
+            E.textContent = `Min-Temp = ${elem.temp.min}`;  
+            document.querySelector("#day4").innerHTML = "";  
+            document.querySelector("#day4").append(D,E)      
+}
+ if(index == 4){
+    var D = document.createElement("p");
+            D.textContent = `Max-Temp = ${elem.temp.max}`;
+            var E = document.createElement("p");
+            E.textContent = `Min-Temp = ${elem.temp.min}`; 
+            document.querySelector("#day3").innerHTML = "";  
+            document.querySelector("#day3").append(D,E)       
+}
+ if(index == 5){
+    var D = document.createElement("p");
+            D.textContent = `Max-Temp = ${elem.temp.max}`;
+            var E = document.createElement("p");
+            E.textContent = `Min-Temp = ${elem.temp.min}`; 
+            document.querySelector("#day4").innerHTML = "";  
+            document.querySelector("#day4").append(D,E)
+                  
+}
+ if(index == 6){
+    var D = document.createElement("p");
+            D.textContent = `Max-Temp = ${elem.temp.max}`;
+            var E = document.createElement("p");
+            E.textContent = `Min-Temp = ${elem.temp.min}`;  
+            document.querySelector("#day5").innerHTML = "";  
+            document.querySelector("#day5").append(D,E)
+}
+            
+      });
+       
+
+    }
+
+
+    
+</script>
+
+

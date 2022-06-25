@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+        src="https://kit.fontawesome.com/683b4b40e3.js"
+        crossorigin="anonymous"
+        >
+        </script>
+    <title>Document</title>
+    <style>
+        body{
+            
+            background-image: linear-gradient(to right, red , black);
+            
+        }
+        #id1{
+            border: 1px solid transparent;
+            width: 70%;
+            height: 25px;
+            background-color: white;
+            border-radius: 50px;
+            margin: auto;
+            border: 3px solid transparent;
+
+        }
+        #ip{
+            width: 85%;
+            
+            margin-left: 40px;
+            margin-top: 0px;
+            border:0px;
+            border-radius: 50px;
+           
+        }
+        #ip:hover{
+            height: 70%;
+        }
+        
+        #icon{
+            font-size: 24px;
+            margin-left: 30px;
+        }
+        #mainbox{
+            border: 1px solid transparent;
+            margin: auto;
+            margin-top: 70px;
+            width: 50%;
+            height: 400px;
+            display: flex;
+            
+            
+        }
+        #box1{
+            border: 1px solid transparent;
+            width: 45%;
+            height: 100%;
+        }
+        #box2{
+            border: 1px solid transparent(236, 236, 234);
+            width: 52%;
+            height: 100%;
+            margin-left: 5px;
+        }
+        #div2{
+            color: wheat;
+            width: 100%;
+            height: 100%;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        #div1{
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+      <div id="id1">
+          <input type="text" id="ip" >
+          <i class="fas fa-search" id="icon" ></i>
+          
+      </div>
+      <div id="mainbox">
+          <div id="box1"></div>
+          <div id="box2"></div>
+      </div>
+</body>
+</html>
+
+<script>
+
+var count =0;
+var mymovies = [{url:"http://www.omdbapi.com/?t=bahubali&apikey=584c41cc"},
+
+{url:"http://www.omdbapi.com/?t=sairat&apikey=584c41cc"},
+{url:"http://www.omdbapi.com/?t=The+founder&apikey=584c41cc"},
+{url:"http://www.omdbapi.com/?t=spiderman&apikey=584c41cc"},
+{url:"http://www.omdbapi.com/?t=Iron+man&apikey=584c41cc"},
+{url:"http://www.omdbapi.com/?t=black+widow&apikey=584c41cc"},
+{url:"http://www.omdbapi.com/?t=captain+america&apikey=584c41cc"},
+{url:"http://www.omdbapi.com/?t=hulk&apikey=584c41cc"},
+{url:"http://www.omdbapi.com/?t=inception&apikey=584c41cc"},
+{url:"http://www.omdbapi.com/?t=super+man&apikey=584c41cc"},
+{url:"http://www.omdbapi.com/?t=avengers&apikey=584c41cc"},
+{url:"http://www.omdbapi.com/?t=infinity+war&apikey=584c41cc"}
+];
+
+
+// var mynewdata = JSON.parse(localStorage.getItem("newdata")) || [];
+//      console.log(mynewdata);
+
+
+mymovies.map(function(elem){
+    async function moviesdata(){
+        
+try{
+              
+            let res = await fetch(elem.url);
+            var Mdata = await res.json();
+            console.log(Mdata);
+       abhi(Mdata);
+}
+catch(error){
+console.log(error);
+}
+           // mynewdata.push(Mdata);
+           
+         // localStorage.setItem("newdata" , JSON.stringify(mynewdata));
+    }
+    moviesdata()
+    
+ });
+
+ 
+
+     
+
+ 
+         
+            
+ document.getElementById("box").textContent = "";
+//  document.getElementById("box").removeEventListener("r" , check);
+//document.getElementById("box").removeItem();
+//  function check(){
+//     document.getElementById("b
+//  }
+    function abhi(Mdata){
+
+        
+        document.getElementById("icon").addEventListener("click" , search);
+               
+        
+           function search(){
+
+           
+      
+            var R = document.querySelector("#ip").value;
+    console.log(R);
+
+    if(Mdata.Title == R ){
+                 
+                       
+            var div1 = document.createElement("div");
+            div1.setAttribute("id" , "div1")
+            var div2 = document.createElement("div");
+            div2.setAttribute("id" , "div2")
+           
+
+            var img = document.createElement("img");
+            img.src = Mdata.Poster;
+
+
+            var A = document.createElement("p");
+            A.textContent = `Title - ${Mdata.Title}`;
+
+            var B = document.createElement("p");
+            B.textContent = `BoxOffice - ${Mdata.BoxOffice}`;
+             
+            var C = document.createElement("p");
+            C.textContent = `Ratings :- ${Mdata.imdbRating}`;
+
+            if(Mdata.imdbRating >= 8.5){
+                var G = document.createElement("p");
+                G.textContent = "Recommended";
+            }
+            else{
+            var G = document.createElement("p");
+                G.textContent = "";
+               
+            }
+
+            var D = document.createElement("p");
+            D.textContent = `Released - ${Mdata.Released}`;
+
+
+             div1.append(img);
+             div2.append(G,A,B,C,D);
+          
+
+             document.getElementById("box1").innerHTML = "";
+
+document.getElementById("box2").innerHTML = "";   
+             
+            document.getElementById("box1").append(div1);
+
+            document.getElementById("box2").append(div2);
+           
+
+           
+}
+
+
+           }
+
+        }   
+
+
+
+
+
+
+</script>

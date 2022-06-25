@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Name:</label>
+    <input type="text" id="name"/>
+    <button onclick="submit()">Submit</button>
+    <h3></h3>
+</body>
+</html>
+
+<script>
+//document.querySelector("h3").textContent = arr;
+
+var arr = ["abhi" , "jay" , "om"];
+
+
+function submit(){
+    
+       
+    var X = document.querySelector("#name").value;
+
+    arr.push(X);
+    alert( `${X} Your Registration Complete`);
+
+    let people = new Promise(function (resolve , reject){
+       
+        //console.log(count--);
+            
+       setTimeout(function(){
+     
+        
+        if(arr[0] == X ){
+          if(count > 0){
+            resolve( `${X} Now your turn`);
+            }
+        }
+        else if(count == 0){
+            reject("Vaccine count is 0 , Vaccine out of stock")
+        }
+       },2000);
+    });
+
+    people.then(function(res){
+      alert(res);
+  
+    });
+
+    people.catch(function(error){
+      alert(error);
+      document.querySelector("h3").append(X+" ");
+    });
+}
+
+
+function start(){
+    arr.shift();
+
+    if(arr.length == 0){
+        clearInterval(id);
+    }
+    console.log(arr);
+}
+
+var id = setInterval(start, 3000);
+
+
+
+ 
+
+
+</script>

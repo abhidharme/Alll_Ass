@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>Document</title>
+    <style>
+        #container{
+            border: 1px solid transparent;
+            width: 70%;
+            height: 600px;
+            margin: auto;
+        }
+        #box{
+            border: 1px solid green;
+            width: 100%;
+            height: 30px;
+            margin: auto;
+            margin-top: 25px;
+        }
+        #boox2{
+            width: 100%;
+            height: 60%;
+            margin-top: 20px;
+        }
+        #home{
+
+            margin-left: 76%;
+        }
+       #box>button{
+            border: 0px;
+            margin-top: 5px;
+            
+            background-color: white;
+        }
+        #box>button:hover{
+            cursor:pointer;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        #NHi{
+            margin-top: 10px;
+            border: 1px solid gray;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 20px;
+        }
+        #div1{
+            
+            height: 250px;
+        }
+        #div2{
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>home</h1>
+            <div id="box">
+                <button id="home" onclick="gohome()">Home</button>
+                <button id="login" onclick="gologin()">Login</button>
+                <button id="signup" onclick="gosign()">Sign Up</button>
+            </div>
+            <div id="boox2">
+
+            </div>
+            <select id="select" onchange="sortarr()">
+                <option value="low">low to high</option>
+                <option value="high">high to low</option>
+            </select>
+            <div id="NHi"></div>
+    </div>
+</body>
+</html>
+
+<script>
+
+
+ var imgges = [
+      "https://ego-alterego.com/wp-content/uploads/2017/03/Movies-posters-digital-art-by-Amit-Kumar9.jpg",
+
+    "https://th.bing.com/th/id/R.187c2ad2fe4102ff7435f1259060a87c?rik=kKgNv82tG2rY7Q&riu=http%3a%2f%2f4.bp.blogspot.com%2f-2hdT22mjlgU%2fVjxLBqgWDmI%2fAAAAAAAADTo%2fMSwvZDjxbzA%2fs1600%2fEk-Villain-Bollywood-Movie-Poster-Wallpaper.jpg&ehk=%2fXPMct3TynfCaFGGkyTNzGzkQWWk7GCpQEZ1sCOHK%2fg%3d&risl=&pid=ImgRaw&r=0",
+
+    "https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_700,h_1000/https://indianyug.com/wp-content/uploads/2019/04/Tumbbad-2018.jpg",
+
+    "https://res.cloudinary.com/arre/image/upload/w_1200,h_630,f_auto,q_auto/v1582296672/Bhoot-movie-illustration_ufvflf.png"
+
+];
+let i=0;
+var div11 = document.getElementById("boox2");
+var img = document.createElement("img");
+img.src = imgges[i];
+div11.append(img);
+    
+let id = setInterval(function(){
+    if(i == imgges.length){
+        i = 0;
+    }
+    img.src = imgges[i];
+    i++;
+
+},3000);
+
+
+
+
+
+var mymovies = ["http://www.omdbapi.com/?t=bahubali&apikey=584c41cc",
+
+"http://www.omdbapi.com/?t=sairat&apikey=584c41cc",
+"http://www.omdbapi.com/?t=The+founder&apikey=584c41cc",
+"http://www.omdbapi.com/?t=spiderman&apikey=584c41cc",
+"http://www.omdbapi.com/?t=Iron+man&apikey=584c41cc",
+"http://www.omdbapi.com/?t=black+widow&apikey=584c41cc",
+"http://www.omdbapi.com/?t=captain+america&apikey=584c41cc",
+"http://www.omdbapi.com/?t=hulk&apikey=584c41cc",
+"http://www.omdbapi.com/?t=inception&apikey=584c41cc",
+"http://www.omdbapi.com/?t=super+man&apikey=584c41cc",
+"http://www.omdbapi.com/?t=avengers&apikey=584c41cc",
+"http://www.omdbapi.com/?t=infinity+war&apikey=584c41cc"
+];
+display(mymovies);
+function sortarr (){
+    var selected = document.querySelector("#select").value;
+     
+if(selected == "high"){
+    mymovies.sort(function (a,b){
+        return b.imdbRating - a.imdbRating;
+    });
+} 
+else if(selected == "low"){
+    mymovies.sort(function (a,b){
+        return a.imdbRating - b.imdbRating;
+    });
+} 
+display(mymovies);
+
+}
+
+
+function display(mymovies){
+mymovies.map(function(elem){
+    async function moviesdata(elem){
+        
+try{
+              
+            let res = await fetch(elem);
+            var Mdata = await res.json();
+            console.log(Mdata);
+          abhi(Mdata);
+}
+catch(error){
+console.log(error);
+}
+}
+moviesdata(elem) 
+    
+ });
+
+}
+
+    function abhi(Mdata){
+       
+           var div111 = document.createElement("div");
+            var div1 = document.createElement("div");
+            div1.setAttribute("id" , "div1")
+            var div2 = document.createElement("div");
+            div2.setAttribute("id" , "div2")
+
+            var img = document.createElement("img");
+            img.src = Mdata.Poster;
+
+
+            var A = document.createElement("p");
+            A.textContent = `Title - ${Mdata.Title}`;
+             
+            var C = document.createElement("p");
+            C.textContent = `Ratings :- ${Mdata.imdbRating}`;
+
+            var D = document.createElement("p");
+            D.textContent = `Released - ${Mdata.Released}`;
+
+            
+             div1.append(img);
+             div2.append(A,C,D);
+           div111.append(div1,div2)
+           
+             document.getElementById("NHi").append(div111)
+            
+           // });
+
+           }
+
+
+
+
+
+
+    
+    function gosign() {
+        window.location.href = "Signupage.html";
+    }
+    function gologin() {
+        window.location.href = "loginpage.html";
+    }
+
+
+</script>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:grid;
+            width: 70%;
+            height: 600px; 
+            grid-template-rows:70px 100% ;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap:20px;
+            justify-content: center;
+            margin: auto;
+            grid-template-areas: 
+            "a a a"
+            "b c d";
+        }
+        h4~p{
+    font-size: 12px;
+    color:rgb(116, 112, 112);
+    font-family: sans-serif;
+}
+h4{
+    font-family: sans-serif;
+}
+        .container>div:nth-child(1){
+            grid-area:a;
+            text-align: center;
+    font-family: sans-serif;
+        }
+        .container>div:nth-child(2){grid-area:b;
+            display:grid;
+            width: 100%;
+            height: 100%; 
+            grid-template-rows:40%px 60% ;
+            grid-template-columns: repeat(1,1fr);
+            grid-gap:20px;
+
+        }
+        .container>div:nth-child(3){grid-area:c;
+            display:grid;
+            width: 100%;
+            height: 100%; 
+            grid-template-rows:40%px 60% ;
+            grid-template-columns: repeat(1,1fr);
+            grid-gap:20px;}
+        .container>div:nth-child(4){grid-area:d;
+            display:grid;
+            width: 100%;
+            height: 100%; 
+            grid-template-rows:40%px 60% ;
+            grid-template-columns: repeat(1,1fr);
+            grid-gap:20px;
+        }
+            @media only screen and (min-width:0px) and (max-width:375px){
+                .container{
+            display:grid;
+            /* width: 70%;
+            height: 300px;  */
+            grid-template-rows:70px 100% 100% 100%;
+            grid-template-columns: repeat(1,1fr);
+            grid-gap:20px;
+            justify-content: center;
+            margin: auto;
+            grid-template-areas: 
+            "a "
+            "b "
+            "c "
+            "d ";
+        }
+
+            }
+            @media only screen and (min-width:376px) and (max-width:500px){
+                .container{
+            display:grid;
+            
+            grid-template-rows:70px 100px 100% ;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap:20px;
+            justify-content: center;
+            margin: auto;
+            grid-template-areas: 
+            "a a "
+            "b c "
+            "d .";
+        }
+            }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div> <h3 id="id1">OUR BLOG</h3></div>
+        <div>
+            <div id="idbox1">
+                <img src="https://preview.colorlib.com/theme/fashe/images/xblog-01.jpg.pagespeed.ic.RXKhYi6o7N.webp"
+                height="100%" width="100%" />
+            </div>
+            <div id="idbox2">
+                <h4>Black Friday Guide:Best Sales & Discount 
+                    Codes</h4>
+                <p>By Nancy Ward on July 22,2017</p>
+                <p>Duis ut velit gravida nibh bibendum commodo.
+                    Suspendisse pelientesque mattis augue id euismod.
+                    Interdum et malesuada fames</p>
+            </div>
+        </div>
+        <div>
+            <div id="idbox1">
+                <img src="https://preview.colorlib.com/theme/fashe/images/xblog-02.jpg.pagespeed.ic.uNlo4Zicxu.webp"
+                height="100%" width="100%" />
+            </div>
+            <div id="idbox2">
+                <h4>The Whte Sneakers Nearly Every Fashion Girl Own</h4>
+                <p>By Nancy Ward on July 18,2017</p>
+                <p>Nuiiam scelerisque, lacus sed consequat laoreet,duienim iaculis leo,eu viverra ex nulla in tellus.Nullam neconare tellus,ac fringilla lacus
+                    .Ut sit ame
+                </p>
+            </div>
+        </div>
+        <div>
+            <div id="idbox1">
+                <img src="https://preview.colorlib.com/theme/fashe/images/xblog-03.jpg.pagespeed.ic.3cqHQ5aCVq.webp"
+                height="100%" width="100%" />
+            </div>
+            <div id="idbox2">
+                <h4>New York SS 2018 Street Style:Annina Mislin</h4>
+                <p>By Nancy Ward on July 2,2017</p>
+                <p>Proin nec vehicula lorem, a efficitur ex.Nam vehicula
+                    nulla vel erat tincidunt , sed hendrerit ligula porttitor.
+                    Fusce sit amet maximus nunc
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

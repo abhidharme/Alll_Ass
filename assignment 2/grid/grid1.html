@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display:grid;
+            border:1px solid black;
+            width:80%;
+            height: 500px;
+            grid-template-rows:repeat(3,1fr);
+            grid-template-columns:repeat(3,1fr);
+            grid-gap:20px 15px;
+            text-align: center;
+            
+        }
+        .A{
+            background-color:yellow ;
+            grid-area:1/2/2/-1
+        }
+        .B{
+            background-color:rgb(63, 129, 72) ;
+        }
+        .C{
+            background-color:rgb(145, 58, 32) ;
+        }
+        .D{
+            background-color:rgb(50, 104, 117) ;
+        }
+        .E{
+            background-color:rgb(47, 69, 131) ;
+        }
+        .F{
+            background-color:rgb(116, 68, 74) ;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+       <div class="A">A</div>
+       <div class="B">B</div>
+       <div  class="C">C</div>
+       <div class="D">D</div>
+       <div class="E">E</div>
+       <div class="F">F</div>
+       <div ></div>
+       <div></div>
+       <div class=""></div>
+   </div> 
+</body>
+</html>

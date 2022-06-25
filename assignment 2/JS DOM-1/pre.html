@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>0</h1>
+    <button id=id1 >increment</button>
+    <button id="id2">decrement</button>
+</body>
+</html>
+
+<script>
+    document.querySelector("#id1").addEventListener("click" , inc);
+var count=0;
+    function inc(){
+     count++;
+     localStorage.setItem("count is" , count);
+     var X = localStorage.getItem("count is")
+     console.log(X);
+     document.querySelector("h1").innerHTML = count;
+    }
+
+
+    document.querySelector("#id2").addEventListener("click" , dec);
+    function dec(){
+     count--;
+     localStorage.setItem("count is" , count);
+     document.querySelector("h1").textContent = count;
+    }
+</script>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+          #Box{
+              display: flex;
+              justify-content: center;
+              margin: auto;
+              margin-top: 200px;
+          }
+          #Box>div{
+              margin-right:15px ;
+              border: 1px solid rgb(241,241,241);
+              
+          }
+          #Box>div>h4{
+              text-align: center;
+            
+          }
+    </style>
+</head>
+<body>
+    <div id="Box"></div>
+</body>
+</html>
+
+<script>
+   
+   var data = [
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi1.jpg.pagespeed.ic.mkSk-Af1ka.webp",
+        name:"LATEST MEN'S SNEAKER",
+        price:"$25.00",
+        strikedOffPrice:"$95.00"
+    },{
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi2.jpg.pagespeed.ic.uBrpABaJqp.webp",
+        name:"LATEST MEN'S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },{
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi3.jpg.pagespeed.ic.iO_cFEPy2K.webp",
+        name:"LATEST MEN'S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    },
+    {
+        imgUrl:"https://preview.colorlib.com/theme/eiser/img/product/inspired-product/xi4.jpg.pagespeed.ic.kmiQW8I5wx.webp",
+        name:"LATEST MEN'S SNEAKER",
+        price:"$35.00",
+        strikedOffPrice:"$100.00"
+    }
+];
+    data.map(function (elem){
+        var div1 = document.createElement("div");
+
+        var image = document.createElement("img");
+        image.setAttribute("src" , elem.imgUrl);
+
+        var h4 = document.createElement("h4");
+        h4.textContent = elem.name;
+        
+
+        var div2 = document.createElement("div");
+        div2.style.display = "flex";
+        div2.style.justifyContent = "space-around";
+
+        var price = document.createElement("p");
+        price.textContent = elem.price;
+
+        var offprice = document.createElement("p");
+        offprice.textContent = elem.strikedOffPrice;
+        offprice.style.textDecoration = "line-through";
+
+        div2.append(price,offprice);
+
+        div1.append(image,h4,div2);
+
+        document.querySelector("#Box").append(div1);
+
+
+
+    });
+
+</script>

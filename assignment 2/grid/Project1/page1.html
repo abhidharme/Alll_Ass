@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+        src="https://kit.fontawesome.com/683b4b40e3.js"
+        crossorigin="anonymous"
+        >
+    </script>
+    <title>Document</title>
+    <style>
+        #haircare{
+            display: flex;
+        }
+        .filterproducts{
+            border: 1px solid red;
+            width: 300px;
+            height: 500px;
+        }
+        .hairproducts{
+          
+            width: 76%;
+            height: 1000px;
+            margin-left: 2%;
+        }
+        #head{
+            font-size: 25px;
+            line-height: 0px;
+        }
+        .info{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14.4px;
+            line-height: 19px;
+        }
+        #sortby{
+            width: 250px;
+            height: 40px;
+            margin-left: 10px;
+        }
+        .hairproducts1{
+            border: 1px solid transparent ;
+            width: 100%;
+            margin-top: 20px;
+            height: 100%;
+            display: grid;
+            grid-template-columns:repeat(3,1fr);
+            grid-template-rows: repeat(8,1fr);
+            grid-gap:50px
+        }
+        .p1{
+            border: 1px solid transparent;
+            height: 450px;
+            
+        }
+        
+        #d1{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12642437-1384891471591053.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d1{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12642437-1384891471591053.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d2{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/11286093-5544866306472227.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d3{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12597163-5554871574934407.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d4{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12901176-1964866391832598.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d5{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/1600/1600/12597164-1244777647709491.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d6{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12915558-2034917112938192.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d7{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12597166-1134871572767741.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d71{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12597161-1214871574856017.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d8{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 230px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/13312506-4774896432847542.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d9{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12882753-4324849731787842.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d10{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12915557-2954917112863726.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d11{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 270px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/11286095-7134866306529542.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d12{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12596173-9024897198767939.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d13{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12597165-6984871572661958.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d14{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/13227262-5924896769540188.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d15{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/11288627-1664875697610202.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d16{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 270px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12901319-2394872069649383.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d17{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12902038-8134866432156213.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d18{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12918894-3264869708983022.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d19{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12635437-1314911951568611.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d20{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 230px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12902631-1774864745852346.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d21{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 270px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12526872-4524872074957712.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+
+        #d22{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12915654-1994869708936438.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d22{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/11310921-1004895711663196.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d23{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 270px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12915670-2114866566888004.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d24{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 270px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12902240-2654866434013054.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d25{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12902262-8974868371837869.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d26{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 230px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12901148-1234871548435983.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d27{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12901140-9424904191542093.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d28{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/11128858-1114866125771796.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d29{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12902460-2004866427553508.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d30{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12903000-1294872045675693.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d31{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 230px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12902241-1824866434051820.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d32{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12901071-4774900275484872.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d33{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 270px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12901087-1364866390003951.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d34{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12918920-2054866556682202.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d35{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12902457-7804866427412838.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d36{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 230px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12901969-1034866428116257.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d37{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12901616-1094866428211318.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d38{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/11310915-1314917112694313.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d39{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12902260-1954868371738101.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d40{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 250px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/12901147-8344871548392396.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #d41{
+            border:1px solid transparent ;
+            width: 100%;
+            height: 230px;
+            background-image: url("https://static.thcdn.com/images/small/webp//productimg/original/13175695-8204889419975191.jpg");
+           background-size: 100% 100%;
+           
+        
+        }
+        #id1{
+            border-radius: 50px;
+            padding: 10px;
+        }
+
+        #id1:hover{
+            background-color: rgba(228, 217, 217, 0.6);
+            cursor: pointer;  
+        }
+        #g1{
+            background-color: transparent;
+           
+            margin-top: 7px;
+            text-align: end;
+        }
+        .g2{
+            text-align: center;
+        }
+        .star{
+            border:1px solid transparent;
+            width: 100%;
+            height: 20px;
+            text-align: center;
+            
+        }
+        h3{
+            text-align: center;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #btn{
+            width: 100%;
+            height:38px ;
+            background-color:#222222 ;
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border: 0px;
+        }
+        #btn:hover{
+            background-color:#464545 ;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="haircare">
+        <div class="filterproducts">
+            
+        </div>
+        <div class="hairproducts">
+            <p id="head">Hair Care Products</p>
+            <p class="info">1252 results</p>
+            <p class="info">Not everyone has the same kind of hair, so it only makes sense that you use products that cater to yours. From thinning hair and oily strands to voluminous curls and sleek-straight style, Dermstore offers a curated collection of hair care products to improve the condition of your hair. Discover the best treatments for damaged hair, dry hair and scalp, hair loss and more. Stock up on your favorite hair treatments, products and tools from top brands including Oribe, Olaplex, VIRTUE®, Living Proof, R+Co and Harry Josh® Pro Tools.</p>
+            <label id="info">Sort by</label>
+            <select id="sortby">
+                <option value="Default">Default</option>
+                <option value="Bestsellers">Bestsellers</option>
+                <option value="Price:Low to high">Price:Low to high</option>
+                <option value="Price:High to low">Price:High to low</option>
+                <option value="A - Z">A - Z</option>
+                <option value="Newest Arrivals">Newest Arrivals</option>
+                <option value="Percentage Discount">Percentage Discount</option>
+            </select>
+            <div class="hairproducts1">
+
+                <div class="p1">
+                    <div id="d1">
+                        <div id="g1">
+                        <i id="id1" class="far fa-heart"></i>
+                    </div>
+                    
+                </div>
+                <p class="info g2">Christophe Robin Cleansing Purifying Scrub with Sea Salt 75ml</p>
+              <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star">3</i>    
+              </div>
+                <h3>$19.00</h3>
+                <button  id="btn">QUICK BUY</button>
+        </div>
+
+
+
+        <div class="p1">
+            <div id="d2">
+                <div id="g1">
+                <i id="id1" class="far fa-heart"></i>
+            </div>
+            
+        </div>
+        <p class="info g2">Alterna CAVIAR Anti-Aging Replenishing Moisture Conditioner (16.5 fl. oz.)</p>
+      <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half">72</i>    
+      </div>
+        <h3>$54.00</h3>
+        <button  id="btn">QUICK BUY</button>
+</div>
+
+
+<div class="p1">
+    <div id="d3">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Olaplex No. 4 Bond Maintenance Shampoo (8.5 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">271</i>    
+</div>
+<h3>$28.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+<div class="p1">
+    <div id="d4">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">R+Co DALLAS Biotin Thickening Conditioner (8.5 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">56</i>    
+</div>
+<h3>$29.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+
+<div class="p1">
+    <div id="d5">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Olaplex No.5 Bond Maintenance Conditioner 8.5 oz</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">15</i>    
+</div>
+<h3>$28.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+
+<div class="p1">
+    <div id="d6">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Oribe Gold Lust Repair Restore Conditioner (6.8 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">123</i>    
+</div>
+<h3>$52.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+
+<div class="p1">
+    <div id="d7">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Olaplex No. 7 Bonding Oil (1 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">153</i>    
+</div>
+<h3>$28.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+<div class="p1">
+    <div id="d71">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Olaplex No. 3 Hair Perfector (3.3 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">435</i>   
+</div>
+<h3>$28.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+
+<div class="p1">
+    <div id="d8">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Olaplex No. 0 Intense Bond Building Hair Treatment (5.2 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">122</i>
+</div>
+<h3>$28.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+<div class="p1">
+    <div id="d9">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Olaplex No 8 Bond Intense Moisture Mask 3.3 fl. oz.</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">46</i>   
+</div>
+<h3>$28.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+
+<div class="p1">
+    <div id="d10">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Olaplex Limited Edition Super Size No. 3 Hair Perfector (8.5 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">160</i>    
+</div>
+<h3>$56.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+
+<div class="p1">
+    <div id="d11">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Olaplex No. 6 Bond Smoother (3.3 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">59</i>
+</div>
+<h3>$28.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+<div class="p1">
+    <div id="d12">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Olaplex No. 4-P Blonde Enhancer Toning Shampoo 250ml</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">134</i>    
+</div>
+<h3>$28.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+<div class="p1">
+    <div id="d13">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Mason Pearson Popular Mixture Hair Brush (1 piece)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">164</i>
+</div>
+<h3>$240.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+<div class="p1">
+    <div id="d14">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Regenepure DR Hair and Scalp Treatment (8 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half"></i>
+<i class="fad fa-star">3</i>   
+</div>
+<h3>$25.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+<div class="p1">
+    <div id="d15">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Harry Josh Pro Tools Pro Makeup Wave Setting Clips (6 piece)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">24</i>
+</div>
+<h3>$18.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+<div class="p1">
+    <div id="d16">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Harry Josh Pro Tools Pro Dryer 2000 3 piece</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">95</i>
+</div>
+<h3>$249.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>        <div class="p1">
+            <div id="d17">
+                <div id="g1">
+                <i id="id1" class="far fa-heart"></i>
+            </div>
+            
+        </div>
+        <p class="info g2">Christophe Robin Cleansing Purifying Scrub with Sea Salt 250ml</p>
+      <div class="star">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half">101</i>  
+      </div>
+        <h3>$53.00</h3>
+        <button  id="btn">QUICK BUY</button>
+</div>
+
+        
+<div class="p1">
+    <div id="d18">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Living Proof Restore Instant Protection (5.5 oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">342</i>
+</div>
+<h3>$29.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+<div class="p1">
+    <div id="d19">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">VIRTUE Healing Oil (1.7 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">11</i>   
+</div>
+<h3>$42.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+<div class="p1">
+    <div id="d20">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Harry Josh Pro Tools Pro Dryer 2000 Diffuser (1 piece)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">33</i>
+</div>
+<h3>$30.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+<div class="p1">
+    <div id="d21">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Oribe Dry Texturizing Spray (8.5 oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">3</i>    
+</div>
+<h3>48.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+<div class="p1">
+    <div id="d22">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Harry Josh Pro Tools Ceramic Flat Styling Iron 1.25 Inch (2 piece)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">199</i>
+</div>
+<h3>$200.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+<div class="p1">
+    <div id="d23">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Oribe Silverati Shampoo (8.5 oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">3</i>    
+</div>
+<h3>$46.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+<div class="p1">
+    <div id="d24">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">RevitaLash Thickening Shampoo (8.5 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">97</i>    
+</div>
+<h3>$36.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+<div class="p1">
+    <div id="d25">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Living Proof Perfect hair Day Dry Shampoo (7.3 oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">18</i>    
+</div>
+<h3>$39.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+<div class="p1">
+    <div id="d26">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">miriam quevedo Black Baccara with Fresh Rose Stem Cells Hair Multiplying Shampoo (8.5 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">15</i> 
+</div>
+<h3>$45.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+<div class="p1">
+    <div id="d27">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Briogeo Don't Despair Repair Deep Conditioning Mask (8 oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half">98</i>
+</div>
+<h3>$38.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+<div class="p1">
+    <div id="d28">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Harry Josh Pro Tools Travel Curling Iron 1.25 Inch (1 piece)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">45</i>    
+</div>
+<h3>$90.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+<div class="p1">
+    <div id="d29">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Oribe Gold Lust Repair Restore Conditioner- Travel (1.7 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">353</i>    
+</div>
+<h3>$18.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+<div class="p1">
+    <div id="d30">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Oribe Gold Lust Dry Shampoo (6 oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">45</i>    
+</div>
+<h3>$48.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+<div class="p1">
+    <div id="d31">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Dermstore Collection Silicone Scalp Massager (1 piece)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star-half"></i>
+</div>
+<h3>$12.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+<div class="p1">
+    <div id="d32">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Rahua Hydration Shampoo (9.3 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">3</i>    
+</div>
+<h3>$36.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+<div class="p1">
+    <div id="d33">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Oribe Silverati Conditioner (6.8 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">3</i>    
+</div>
+<h3>$48.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+<div class="p1">
+    <div id="d34">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Oribe Run-Through Detangling Primer (5.9 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">3</i>    
+</div>
+<h3>$37.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+<div class="p1">
+    <div id="d35">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Harry Josh Pro Tools Ultra Light Pro Dryer 3 piece</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">3</i>    
+</div>
+<h3>$349.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+<div class="p1">
+    <div id="d36">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Oribe Styling Butter Curl Enhancing Creme (6.7 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">3</i>    
+</div>
+<h3>$46.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+<div class="p1">
+    <div id="d37">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">R+Co FOIL Frizz Static Control Spray (5 oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">3</i>    
+</div>
+<h3>$29.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+<div class="p1">
+    <div id="d38">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Harry Josh Pro Tools Pro Styling Clips (3 count)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">3</i>    
+</div>
+<h3>$15.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+<div class="p1">
+    <div id="d39">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Oribe Gold Lust Nourishing Hair Oil (3.4 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">3</i>    
+</div>
+<h3>$56.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+<div class="p1">
+    <div id="d40">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">RevitaLash Thickening Conditioner (8.45 fl. oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">3</i>    
+</div>
+<h3>$37.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+<div class="p1">
+    <div id="d41">
+        <div id="g1">
+        <i id="id1" class="far fa-heart"></i>
+    </div>
+    
+</div>
+<p class="info g2">Living Proof Perfect hair Day Dry Shampoo (4 oz.)</p>
+<div class="star">
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star"></i>
+<i class="fas fa-star">3</i>    
+</div>
+<h3>$26.00</h3>
+<button  id="btn">QUICK BUY</button>
+</div>
+
+
+
+
+
+    </div>
+</body>
+</html>

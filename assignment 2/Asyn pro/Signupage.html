@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            
+            width: 70%;
+            height: 600px;
+            margin: auto;
+        }
+        #box{
+            
+            width: 92%;
+            height: 30px;
+            margin: auto;
+            margin-top: 25px;
+            box-shadow: rgb(119, 18, 122) 3px 3px 6px 0px inset, rgba(190, 25, 25, 0.5) -3px -3px 6px 1px inset;
+
+        }
+        #home{
+
+            margin-left: 76%;
+        }
+       #box>button{
+            border: 0px;
+            margin-top: 5px;
+            background-color: rgb(37, 37, 37);
+            color: white;
+        }
+        #box>button:hover{
+            cursor:pointer ;
+            
+        }
+        #formmmy{
+            
+            width: 40%;
+            height: 50%;
+            margin: auto;
+            margin-top: 50px;
+            box-shadow: rgb(119, 18, 122) 3px 3px 6px 0px inset, rgba(190, 25, 25, 0.5) -3px -3px 6px 1px inset;
+
+        }
+        input{
+           width: 80%;
+           margin-top: 30px;
+           margin-left: 35px;
+
+
+        }
+   #btn{
+       width: 82%;
+       height: 30px;
+       background-color: black;
+       color:blanchedalmond;
+       border: 0px;
+       
+       
+
+   }
+   #btn:hover{
+       background-color: rgb(226, 155, 84);
+       cursor: pointer;
+       color: black;
+       font-weight: bold;
+     
+   }
+   body{
+       background-color: rgb(41, 37, 37);
+   }
+@media only screen  and  (min-width:0px) and (max-width:800px){
+    input{
+           width: 60%;
+           margin-top: 30px;
+           margin-left: 35px;
+        }
+        #btn{
+            width: 65%;
+        }
+        #container{
+            
+            width: 70%;
+           
+        }
+        #home{
+
+margin-left: 60%;
+}
+} 
+    </style>
+</head>
+<body>
+    <div id="container">
+            <div id="box">
+                <button id="home" onclick="gohome()">Home</button>
+                <button id="login" onclick="gologin()">Login</button>
+                <button id="signup" onclick="gosign()">Sign Up</button>
+            </div >
+            
+            <form id="formmmy">
+            <input type="text" id="name" placeholder="Enter Name" />
+            <input type="number" id="cont" placeholder="Enter Contact Number"/>
+            <input type="email" id="email" placeholder="Enter Email "/>
+            <input type="password" id="pass" placeholder="Enter Password"/>
+            <input type="Submit" id="btn"/>
+            </form>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("#formmmy").addEventListener("submit" , signupdata);
+
+    function signupdata(event){
+         event.preventDefault();
+
+          let mydata = JSON.parse(localStorage.getItem("signdata")) || [];
+            
+        var nn = document.getElementById("name").value;
+        var cc = document.getElementById("cont").value;
+        var ee = document.getElementById("email").value;
+        var pp = document.getElementById("pass").value;
+
+        
+
+          function  CFobj(n,c,e,p){
+             this.name = n;
+             this.cont = c;
+             this.email = e;
+             this.pass = p;
+         }
+
+         if(nn == ""){
+             alert("Enter name");
+          
+         } 
+         else if(cc==""){
+            alert("Please Enter Valid Number");
+         }
+         else if(ee==""){
+        alert("Please Enter Valid Email");    
+        }
+       else if(pp==""){
+   alert("Plaese Enter Valid Password");
+          }
+            else{
+                var  s1 = new CFobj(nn,cc,ee,pp);
+                mydata.push(s1);
+                localStorage.setItem("signdata" , JSON.stringify(mydata));
+            }
+    }
+
+
+async function getlink(){
+    let responce = await fetch(url);
+
+    let data = await responce.json();
+}
+
+
+
+
+
+
+
+
+
+    function gologin() {
+        window.location.href = "loginpage.html";
+    }
+    function gohome() {
+        window.location.href = "home.html";
+    }
+</script>

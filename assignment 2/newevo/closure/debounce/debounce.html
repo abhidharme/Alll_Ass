@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="searchdata" onkeyup="debounce(searchD,5000)" placeholder="enter text" />
+     <div id="divid"></div>
+</body>
+</html>
+<script>
+
+  async function searchD(){
+      try{
+          var movies = document.getElementById("searchdata").value;
+          let response = await fetch(`http://www.omdbapi.com/?s=${movies}&apikey=584c41cc&i=tt`);
+          let data = await response.json();
+          let X = data.Search;
+          console.log(X)
+         putdata(X);
+              }
+      catch(err){
+          console.log(err)
+      }
+  }
+
+
+function putdata(arr){
+    document.getElementById("divid").innerHTML = "";
+    arr.map((e)=>{
+        var A = document.createElement("h3");
+            A.textContent = e.Title;
+
+       var img = document.createElement("img");
+       img.src = e.Poster;     
+
+
+       document.getElementById("divid").append(A,img)
+
+
+
+    })
+}
+
+
+function debounce(func,delay){
+    if(search_time){
+         clearTimeout(search_time);
+    }
+
+    var search_time = setTimeout(function(){
+        func();
+    },delay)
+}
+
+</script>

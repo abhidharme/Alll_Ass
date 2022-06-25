@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    
+    function myArray() {
+        this.length = arguments.length;
+ 
+
+        Object.defineProperty(this,"length",{
+            writable: true,
+            enumerable: false,
+        });
+       for(let i=0 ; i<this.length ; i++){
+           this[i] = arguments[i];
+       }
+    }
+    let maraiarr = new myArray(1,2,3);
+
+    
+    //console.log(Object.values(maraiarr));
+
+    myArray.prototype.पुश = function(el){
+        this[this.length] = el;
+        this.length++;
+    }
+
+    // myArray.prototype.पॉप = function(el){
+    //     this[this.length] = el;
+    //     this.length--;
+    // }
+
+    maraiarr.पुश(4);
+    maraiarr.पुश(5);
+
+    
+
+    var bag=[];
+     for(var j=maraiarr.length-1 ; j>=0 ; j--){
+         bag.push(maraiarr[j]);
+     }
+    console.log(bag);
+    
+     
+</script>                  

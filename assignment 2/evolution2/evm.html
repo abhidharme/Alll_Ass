@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select{
+            border: 0px;
+        }
+        .multi{
+            width: 200px;
+            height: 5px;
+            margin-top: 70px;
+        }
+        .selectbox{
+            position: relative;
+        }
+        .selectbox select{
+            width: 100%;
+            font-weight: bold;
+           
+        }
+      
+        .overselect{
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+        }
+        #checkbox{
+            display: none;
+            border: 1px solid transparent;
+            max-height: 100px;
+            overflow:scroll;
+            
+        }
+        #checkbox label{
+            display: block;
+           
+            
+
+        }
+        #checkbox label:hover{
+            background-color: none;
+        }
+
+        .multi1{
+            width: 200px;
+            height: 5px;
+            margin-top: 140px;
+        }
+        .selectbox1{
+            position: relative;
+        }
+        .selectbox1 select{
+            width: 100%;
+            font-weight: bold;
+           
+        }
+      
+        .overselect1{
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+        }
+        #checkbox1{
+            display: none;
+            border: 1px solid transparent;
+            max-height: 100px;
+            overflow:scroll;
+            
+        }
+        #checkbox1 label{
+            display: block;
+           
+            
+
+        }
+        #checkbox1 label:hover{
+            background-color: none;
+        }
+
+        .multi2{
+            width: 200px;
+            height: 5px;
+            margin-top: 140px;
+        }
+        .selectbox2{
+            position: relative;
+        }
+        .selectbox2 select{
+            width: 100%;
+            font-weight: bold;
+           
+        }
+      
+        .overselect2{
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+        }
+        #checkbox2{
+            display: none;
+            border: 1px solid transparent;
+            max-height: 100px;
+            overflow:scroll;
+            
+        }
+        #checkbox2 label{
+            display: block;
+           
+            
+
+        }
+        #checkbox2 label:hover{
+            background-color: none;
+        }
+
+
+        .multi3{
+            width: 200px;
+            height: 5px;
+            margin-top: 140px;
+        }
+        .selectbox3{
+            position: relative;
+        }
+        .selectbox3 select{
+            width: 100%;
+            font-weight: bold;
+           
+        }
+      
+        .overselect3{
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+        }
+        #checkbox3{
+            display: none;
+            border: 1px solid transparent;
+            max-height: 100px;
+            overflow:scroll;
+            
+        }
+        #checkbox3 label{
+            display: block;
+           
+            
+
+        }
+        #checkbox3 label:hover{
+            background-color: none;
+        }
+
+        .multi4{
+            width: 200px;
+            height: 5px;
+            margin-top: 140px;
+        }
+        .selectbox4{
+            position: relative;
+        }
+        .selectbox4 select{
+            width: 100%;
+            font-weight: bold;
+           
+        }
+      
+        .overselect4{
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+        }
+        #checkbox4{
+            display: none;
+            border: 1px solid transparent;
+            max-height: 100px;
+            overflow:scroll;
+            
+        }
+        #checkbox4 label{
+            display: block;
+           
+            
+
+        }
+        #checkbox4 label:hover{
+            background-color: none;
+        }
+
+        .multi5{
+            width: 200px;
+            height: 5px;
+            margin-top: 140px;
+        }
+        .selectbox5{
+            position: relative;
+        }
+        .selectbox5 select{
+            width: 100%;
+            font-weight: bold;
+           
+        }
+      
+        .overselect5{
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+        }
+        #checkbox5{
+            display: none;
+            border: 1px solid transparent;
+            max-height: 100px;
+            overflow:scroll;
+            
+        }
+        #checkbox5 label{
+            display: block;
+           
+            
+
+        }
+        #checkbox5 label:hover{
+            background-color: none;
+        }
+
+        .multi6{
+            width: 200px;
+            height: 5px;
+            margin-top: 140px;
+        }
+        .selectbox6{
+            position: relative;
+        }
+        .selectbox6 select{
+            width: 100%;
+            font-weight: bold;
+           
+        }
+      
+        .overselect6{
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+        }
+        #checkbox6{
+            display: none;
+            border: 1px solid transparent;
+            max-height: 100px;
+            overflow:scroll;
+            
+        }
+        #checkbox6 label{
+            display: block;
+           
+            
+
+        }
+        #checkbox6 label:hover{
+            background-color: none;
+        }
+
+        .multi7{
+            width: 200px;
+            height: 5px;
+            margin-top: 140px;
+        }
+        .selectbox7{
+            position: relative;
+        }
+        .selectbox7 select{
+            width: 100%;
+            font-weight: bold;
+           
+        }
+      
+        .overselect7{
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+        }
+        #checkbox7{
+            display: none;
+            border: 1px solid transparent;
+            max-height: 100px;
+            overflow:scroll;
+            
+        }
+        #checkbox7 label{
+            display: block;
+           
+            
+
+        }
+        #checkbox7 label:hover{
+            background-color: none;
+        }
+
+        .multi8{
+            width: 200px;
+            height: 5px;
+            margin-top: 140px;
+        }
+        .selectbox8{
+            position: relative;
+        }
+        .selectbox8 select{
+            width: 100%;
+            font-weight: bold;
+           
+        }
+      
+        .overselect8{
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+        }
+        #checkbox8{
+            display: none;
+            border: 1px solid transparent;
+            max-height: 100px;
+            overflow:scroll;
+            
+        }
+        #checkbox8 label{
+            display: block;
+           
+            
+
+        }
+        #checkbox8 label:hover{
+            background-color: none;
+        }
+
+        .multi9{
+            width: 200px;
+            height: 5px;
+            margin-top: 140px;
+        }
+        .selectbox9{
+            position: relative;
+        }
+        .selectbox9 select{
+            width: 100%;
+            font-weight: bold;
+           
+        }
+      
+        .overselect9{
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+        }
+        #checkbox9{
+            display: none;
+            border: 1px solid transparent;
+            max-height: 100px;
+            overflow:scroll;
+            
+        }
+        #checkbox9 label{
+            display: block;
+           
+            
+
+        }
+        #checkbox9 label:hover{
+            background-color: none;
+        }
+
+        .multi10{
+            width: 200px;
+            height: 5px;
+            margin-top: 140px;
+        }
+        .selectbox10{
+            position: relative;
+        }
+        .selectbox10 select{
+            width: 100%;
+            font-weight: bold;
+           
+        }
+      
+        .overselect10{
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+        }
+        #checkbox10{
+            display: none;
+            border: 1px solid transparent;
+            max-height: 100px;
+            overflow:scroll;
+            
+        }
+        #checkbox10 label{
+            display: block;
+           
+            
+
+        }
+        #checkbox10 label:hover{
+            background-color: none;
+        }
+
+        .multi11{
+            width: 200px;
+            height: 5px;
+            margin-top: 140px;
+        }
+        .selectbox11{
+            position: relative;
+        }
+        .selectbox11 select{
+            width: 100%;
+            font-weight: bold;
+           
+        }
+      
+        .overselect11{
+            position: absolute;
+            left: 0; right: 0; top: 0; bottom: 0;
+        }
+        #checkbox11{
+            display: none;
+            border: 1px solid transparent;
+            max-height: 100px;
+            overflow:scroll;
+            
+        }
+        #checkbox11 label{
+            display: block;
+           
+            
+
+        }
+        #checkbox11 label:hover{
+            background-color: none;
+        }
+    </style>
+</head>
+<body>
+    <form>
+   <div class="multi">
+       <div class="selectbox" onclick="showcheck()">
+           <select >
+               <option>Brand</option>
+               
+           </select >
+           <hr>
+           <div class="overselect">
+
+           </div>
+       </div>
+       <div id="checkbox">
+           <label for="one" value="sdsg"><input type="checkbox" id="one">100% Pure (7)</label>
+           <label for="tow"><input type="checkbox" id="two">Alterna</label>
+           <label for="three"><input type="checkbox" id="three">AMELIORATE (4)</label>
+           <label for="one"><input type="checkbox" id="one">Aquis (13)</label>
+           <label for="tow"><input type="checkbox" id="two">Baxter of California (6)</label>
+           <label for="three"><input type="checkbox" id="three">Briogeo (40)</label>
+           <label for="one"><input type="checkbox" id="one">Briogeo Hair (7)</label>
+           <label for="tow"><input type="checkbox" id="two">By Terry (1)</label>
+           <label for="three"><input type="checkbox" id="three">Caudalie (1)</label>
+           <label for="one"><input type="checkbox" id="one">Charlotte Mensah (4)</label>
+           <label for="tow"><input type="checkbox" id="two">Christophe Robin (33)</label>
+           <label for="three"><input type="checkbox" id="three">Color WOW (22)</label>
+           <label for="one"><input type="checkbox" id="one">COOLA (1)</label>
+           <label for="tow"><input type="checkbox" id="two">DCL Dermatologic Cosmetic Laboratories (5)</label>
+           <label for="three"><input type="checkbox" id="three">Dermstore Collection (1)</label>
+           <label for="one" value="sdsg"><input type="checkbox" id="one">DevaCurl (1)</label>
+           <label for="tow"><input type="checkbox" id="two">DHC (2)</label>
+           <label for="three"><input type="checkbox" id="three">DHS (9))</label>
+           <label for="one"><input type="checkbox" id="one">dpHUE (28)</label>
+           <label for="tow"><input type="checkbox" id="two">dpHUE (28)</label>
+           <label for="three"><input type="checkbox" id="three">Elemis (1))</label>
+           <label for="one"><input type="checkbox" id="one">ESPA (1)</label>
+           <label for="tow"><input type="checkbox" id="two">évolis Professional (12)</label>
+           <label for="three"><input type="checkbox" id="three">EVOLVh (16)</label>
+           <label for="one"><input type="checkbox" id="one">First Aid Beauty (1)</label>
+           <label for="tow"><input type="checkbox" id="two">GLOSS MODERNE (3</label>
+           <label for="three"><input type="checkbox" id="three">Grow Gorgeous (26)</label>
+           <label for="one"><input type="checkbox" id="one">HairMax (2)</label>
+           <label for="tow"><input type="checkbox" id="two">Harry Josh Pro Tools (18)</label>
+           <label for="three"><input type="checkbox" id="three">Herbivore Botanicals (2)</label>
+           <label for="one" value="sdsg"><input type="checkbox" id="one">Hot Tools (9)</label>
+           <label for="tow"><input type="checkbox" id="two">Jack Black (3)</label>
+           <label for="three"><input type="checkbox" id="three">kai (2)</label>
+           <label for="one"><input type="checkbox" id="one">KLORANE (35)</label>
+           <label for="tow"><input type="checkbox" id="two">Living Proof (71))</label>
+           <label for="three"><input type="checkbox" id="three">Miriam Quevedo (23)</label>
+           <label for="one"><input type="checkbox" id="one">neuLash (1)</label>
+           <label for="tow"><input type="checkbox" id="two">Olaplex (10)</label>
+           <label for="three"><input type="checkbox" id="three">Oribe (103)</label>
+           <label for="one"><input type="checkbox" id="one">Peter Thomas Roth (2)</label>
+           <label for="tow"><input type="checkbox" id="two">Philip B (38)</label>
+           <label for="three"><input type="checkbox" id="three">R+Co Bleu (10))</label>
+           <label for="one"><input type="checkbox" id="one">SHHHOWERCAP (5)</label>
+           <label for="tow"><input type="checkbox" id="two">DCL Dermatologic Cosmetic Laboratories (5)</label>
+           <label for="three"><input type="checkbox" id="three">Dermstore Collection (1)</label>
+           <label for="one" value="sdsg"><input type="checkbox" id="one">DevaCurl (1)</label>
+           <label for="tow"><input type="checkbox" id="two">DHC (2)</label>
+           <label for="three"><input type="checkbox" id="three">DHS (9))</label>
+           <label for="one"><input type="checkbox" id="one">dpHUE (28)</label>
+           <label for="tow"><input type="checkbox" id="two">dpHUE (28)</label>
+           <label for="three"><input type="checkbox" id="three">Elemis (1))</label>
+           <label for="one"><input type="checkbox" id="one">ESPA (1)</label>
+           <label for="tow"><input type="checkbox" id="two">évolis Professional (12)</label>
+           <label for="three"><input type="checkbox" id="three">EVOLVh (16)</label>
+           <label for="one"><input type="checkbox" id="one">First Aid Beauty (1)</label>
+           <label for="tow"><input type="checkbox" id="two">UNITE Hair (36)</label>
+           <label for="three"><input type="checkbox" id="three">VIRTUE (46)</label>
+           <label for="one"><input type="checkbox" id="one">VMV Hypoallergenics</label>
+           <label for="tow"><input type="checkbox" id="two">Wander Beauty (2)</label>
+           <label for="three"><input type="checkbox" id="three">Weleda (1)</label>
+       </div>
+   </div>
+</form> 
+<form>
+    <div class="multi1">
+        <div class="selectbox1" onclick="showcheck1()">
+            <select  id="select1">
+                <option>Haircare Category</option>
+                
+            </select >
+            <hr>
+            <div class="overselect1">
+ 
+            </div>
+        </div>
+        <div id="checkbox1">
+            <label for="one" value="sdsg"><input type="checkbox" id="one">Hair Preparation (65)</label>
+            <label for="tow"><input type="checkbox" id="two">Electrical Hair Tools (9)</label>
+            <label for="three"><input type="checkbox" id="three">Hair Brushes & Combs (9)</label>
+            <label for="one"><input type="checkbox" id="one">Hair Brushes & Combs</label>
+           
+        </div>
+    </div>
+ </form> 
+
+ <form>
+    <div class="multi2">
+        <div class="selectbox2" onclick="showcheck2()">
+            <select >
+                <option>Hair Type</option>
+                
+            </select id="select2">
+            <hr>
+            <div class="overselect2">
+ 
+            </div>
+        </div>
+        <div id="checkbox2">
+            <label for="one" value="sdsg"><input type="checkbox" id="one">Afro-Caribbean (4)</label>
+            <label for="tow"><input type="checkbox" id="two">Colotransparent (66)</label>
+            <label for="three"><input type="checkbox" id="three">Curly & Wavy (62)</label>
+            <label for="one"><input type="checkbox" id="one">Damaged (85)</label>
+            <label for="tow"><input type="checkbox" id="two">Fine (52)</label>
+            <label for="three"><input type="checkbox" id="three">Briogeo (40)</label>
+            <label for="one"><input type="checkbox" id="one">Briogeo Hair (7)</label>
+            <label for="tow"><input type="checkbox" id="two">By Terry (1)</label>
+            <label for="three"><input type="checkbox" id="three">Caudalie (1)</label>
+            <label for="one"><input type="checkbox" id="one">Weakened (1)</label>
+            
+        </div>
+    </div>
+ </form> 
+
+ 
+ <form>
+    <div class="multi3">
+        <div class="selectbox3" onclick="showcheck3()">
+            <select >
+                <option>Hair Preparation Products</option>
+                
+            </select id="select3">
+            <hr>
+            <div class="overselect3">
+ 
+            </div>
+        </div>
+        <div id="checkbox3">
+            <label for="one" value="sdsg"><input type="checkbox" id="one">100% Pure (7)</label>
+            <label for="tow"><input type="checkbox" id="two">Alterna</label>
+            <label for="three"><input type="checkbox" id="three">AMELIORATE (4)</label>
+            <label for="one"><input type="checkbox" id="one">Aquis (13)</label>
+            <label for="tow"><input type="checkbox" id="two">Baxter of California (6)</label>
+            <label for="three"><input type="checkbox" id="three">Briogeo (40)</label>
+            <label for="one"><input type="checkbox" id="one">Briogeo Hair (7)</label>
+            <label for="tow"><input type="checkbox" id="two">By Terry (1)</label>
+            <label for="three"><input type="checkbox" id="three">Weakened (1)</label>
+            
+        </div>
+    </div>
+ </form> 
+
+ <form>
+    <div class="multi4">
+        <div class="selectbox4" onclick="showcheck4()">
+            <select >
+                <option>Electrical Hair Tools</option>
+                
+            </select id="select4">
+            <hr>
+            <div class="overselect4">
+ 
+            </div>
+        </div>
+        <div id="checkbox4">
+            <label for="one" value="sdsg"><input type="checkbox" id="one">Hair & Scalp Treatments (34)</label>
+            <label for="tow"><input type="checkbox" id="two">Conditioner (28)</label>
+            <label for="three"><input type="checkbox" id="three">Shampoo (26)</label>
+            <label for="one"><input type="checkbox" id="one">Leave-In Conditioner (4)</label>
+            <label for="tow"><input type="checkbox" id="two">Hair Oil (1)</label>
+            <label for="three"><input type="checkbox" id="three">Hair Masks (11)</label>
+            
+            
+        </div>
+    </div>
+ </form> 
+
+ 
+ <form>
+    <div class="multi5">
+        <div class="selectbox5" onclick="showcheck5()">
+            <select >
+                <option>Hair Styling</option>
+                
+            </select id="select5">
+            <hr>
+            <div class="overselect5">
+ 
+            </div>
+        </div>
+        <div id="checkbox5">
+            <label for="one" value="sdsg"><input type="checkbox" id="one">Hair Cream (4)</label>
+            <label for="tow"><input type="checkbox" id="two">Hair Serum (5)</label>
+            <label for="three"><input type="checkbox" id="three">Hair Spray (3)</label>
+            
+        </div>
+    </div>
+ </form> 
+
+ 
+ <form>
+    <div class="multi6">
+        <div class="selectbox6" onclick="showcheck6()">
+            <select >
+                <option>Hair Care Benefit</option>
+                
+            </select id="select6">
+            <hr>
+            <div class="overselect6">
+ 
+            </div>
+        </div>
+        <div id="checkbox6">
+            <label for="one" value="sdsg"><input type="checkbox" id="one">Anti Dandruff (16)</label>
+            <label for="tow"><input type="checkbox" id="two">Anti-Frizz (85)</label>
+            <label for="three"><input type="checkbox" id="three">Balancing (4)</label>
+            <label for="one"><input type="checkbox" id="one">Color Protection (63)</label>
+            <label for="tow"><input type="checkbox" id="two">Damage Repair (94)</label>
+            <label for="three"><input type="checkbox" id="three">Briogeo (40)</label>
+            <label for="one"><input type="checkbox" id="one">Briogeo Hair (7)</label>
+            <label for="tow"><input type="checkbox" id="two">By Terry (1)</label>
+            <label for="three"><input type="checkbox" id="three">Caudalie (1)</label>
+            <label for="one"><input type="checkbox" id="one">Charlotte Mensah (4)</label>
+            <label for="tow"><input type="checkbox" id="two">Christophe Robin (33)</label>
+            <label for="three"><input type="checkbox" id="three">Color WOW (22)</label>
+            <label for="one"><input type="checkbox" id="one">COOLA (1)</label>
+            <label for="tow"><input type="checkbox" id="two">DCL Dermatologic Cosmetic Laboratories (5)</label>
+            <label for="three"><input type="checkbox" id="three">Dermstore Collection (1)</label>
+            <label for="one" value="sdsg"><input type="checkbox" id="one">DevaCurl (1)</label>
+            <label for="tow"><input type="checkbox" id="two">DHC (2)</label>
+            
+        </div>
+    </div>
+ </form> 
+
+ 
+ <form>
+    <div class="multi7">
+        <div class="selectbox7" onclick="showcheck7()">
+            <select >
+                <option>Hair Dye Color</option>
+                
+            </select id="select7" >
+            <hr>
+            <div class="overselect7">
+ 
+            </div>
+        </div>
+        <div id="checkbox7">
+            <label for="one" value="sdsg"><input type="checkbox" id="one">Blonde (1)</label>
+            
+        </div>
+    </div>
+ </form> 
+
+ 
+ <form>
+    <div class="multi8">
+        <div class="selectbox8" onclick="showcheck8()">
+            <select >
+                <option>Preferences</option>
+                
+            </select id="select8">
+            <hr>
+            <div class="overselect8">
+ 
+            </div>
+        </div>
+        <div id="checkbox8">
+            <label for="one" value="sdsg"><input type="checkbox" id="one">Certified Cruelty-Free (451)</label>
+            <label for="tow"><input type="checkbox" id="two">Clean (190)</label>
+            <label for="three"><input type="checkbox" id="three">Fragrance-Free (40))</label>
+            <label for="one"><input type="checkbox" id="one">Gluten-Free (425)</label>
+            <label for="tow"><input type="checkbox" id="two">Natural (206)</label>
+            <label for="three"><input type="checkbox" id="three">Oil-Free (60)</label>
+            <label for="one"><input type="checkbox" id="one">Phthalate-Free (593)</label>
+            <label for="tow"><input type="checkbox" id="two">Phthalate-Free(299)</label>
+            <label for="three"><input type="checkbox" id="three">Sulfate - Free (588)</label>
+            <label for="one"><input type="checkbox" id="one">Vegan (471)</label>
+            
+        </div>
+    </div>
+ </form> 
+
+ 
+ <form>
+    <div class="multi9">
+        <div class="selectbox9" onclick="showcheck9()">
+            <select >
+                <option>Price</option>
+                
+            </select id="select9">
+            <hr>
+            <div class="overselect9">
+ 
+            </div>
+        </div>
+        <div id="checkbox9">
+            <label for="one" value="sdsg"><input type="checkbox" id="one">Less than $10 (11)</label>
+            <label for="tow"><input type="checkbox" id="two">$10 - $25 (233)</label>
+            <label for="three"><input type="checkbox" id="three">$25 - $50 (787)</label>
+            <label for="one"><input type="checkbox" id="one">$50 - $100 (188)</label>
+            <label for="tow"><input type="checkbox" id="two">More than $100 (70)</label>
+            
+            
+        </div>
+    </div>
+ </form> 
+
+ 
+ <form>
+    <div class="multi10">
+        <div class="selectbox10" onclick="showcheck10()">
+            <select >
+                <option>Saving</option>
+                
+            </select id="select10">
+            <hr>
+            <div class="overselect10">
+ 
+            </div>
+        </div>
+        <div id="checkbox10">
+            <label for="one" value="sdsg"><input type="checkbox" id="one">up to 25% (8)</label>
+            <label for="tow"><input type="checkbox" id="two">25% - 50% (8)</label>
+            <label for="three"><input type="checkbox" id="three">50% - 75% (1)</label>
+            
+        </div>
+    </div>
+ </form> 
+
+ 
+ <form>
+    <div class="multi11">
+        <div class="selectbox11" onclick="showcheck11()">
+            <select >
+                <option>Average Reviews</option>
+                
+            </select id="select11">
+            <hr>
+            <div class="overselect11">
+ 
+            </div>
+        </div>
+        <div id="checkbox11">
+            <label for="one" value="sdsg"><input type="checkbox" id="one"> 2-3 (8)</label>
+            <label for="tow"><input type="checkbox" id="two">3-4 (84)</label>
+            <label for="three"><input type="checkbox" id="three">4+ (915)</label>
+            
+        </div>
+    </div>
+ </form> 
+
+ 
+ 
+
+</body>
+</html>
+
+<script>
+    var exp = false;
+    function showcheck (){
+        var checkbox = document.getElementById("checkbox");
+        if (!exp){
+            checkbox.style.display = "block";
+        }  
+        else{
+            checkbox.style.display = "none";
+            exp = false;
+        }
+    }
+
+    var exp1 = false;
+    function showcheck1 (){
+        var checkbox = document.getElementById("checkbox1");
+        if (!exp1){
+            checkbox1.style.display = "block";
+        }  
+        else{
+            checkbox1.style.display = "none";
+            exp1 = false;
+        }
+    }
+
+    var exp2 = false;
+    function showcheck2 (){
+        var checkbox = document.getElementById("checkbox2");
+        if (!exp2){
+            checkbox2.style.display = "block";
+        }  
+        else{
+            checkbox2.style.display = "none";
+            exp2 = false;
+        }
+    }
+
+    var exp3 = false;
+    function showcheck3 (){
+        var checkbox3 = document.getElementById("checkbox3");
+        if (!exp3){
+            checkbox3.style.display = "block";
+        }  
+        else{
+            checkbox3.style.display = "none";
+            exp3 = false;
+        }
+    }
+
+    var exp4 = false;
+    function showcheck4 (){
+        var checkbox = document.getElementById("checkbox4");
+        if (!exp4){
+            checkbox4.style.display = "block";
+        }  
+        else{
+            checkbox4.style.display = "none";
+            exp4 = false;
+        }
+    }
+
+    var exp5 = false;
+    function showcheck5 (){
+        var checkbox5 = document.getElementById("checkbox5");
+        if (!exp5){
+            checkbox5.style.display = "block";
+        }  
+        else{
+            checkbox5.style.display = "none";
+            exp5 = false;
+        }
+    }
+
+    var exp6 = false;
+    function showcheck6 (){
+        var checkbox6 = document.getElementById("checkbox6");
+        if (!exp6){
+            checkbox6.style.display = "block";
+        }  
+        else{
+            checkbox6.style.display = "none";
+            exp6 = false;
+        }
+    }
+
+
+    var exp7 = false;
+    function showcheck7 (){
+        var checkbox7 = document.getElementById("checkbox7");
+        if (!exp7){
+            checkbox7.style.display = "block";
+        }  
+        else{
+            checkbox7.style.display = "none";
+            exp7 = false;
+        }
+    }
+
+    var exp8 = false;
+    function showcheck8 (){
+        var checkbox8 = document.getElementById("checkbox8");
+        if (!exp8){
+            checkbox8.style.display = "block";
+        }  
+        else{
+            checkbox8.style.display = "none";
+            exp8 = false;
+        }
+    }
+
+    var exp9 = false;
+    function showcheck9 (){
+        var checkbox9 = document.getElementById("checkbox9");
+        if (!exp9){
+            checkbox9.style.display = "block";
+        }  
+        else{
+            checkbox9.style.display = "none";
+            exp9 = false;
+        }
+    }
+
+    var exp10 = false;
+    function showcheck10 (){
+        var checkbox10 = document.getElementById("checkbox10");
+        if (!exp10){
+            checkbox10.style.display = "block";
+        }  
+        else{
+            checkbox10.style.display = "none";
+            exp10 = false;
+        }
+    }
+
+    var exp11 = false;
+    function showcheck11 (){
+        var checkbox11 = document.getElementById("checkbox11");
+        if (!exp11){
+            checkbox11.style.display = "block";
+        }  
+        else{
+            checkbox11.style.display = "none";
+            exp11 = false;
+        }
+    }
+</script>

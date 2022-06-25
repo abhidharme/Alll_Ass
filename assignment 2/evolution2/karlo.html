@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #container{
+           border:1px solid transparent;
+           width: 300px;
+           height: 400px;
+           box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+       }
+       #select{
+           width: 300px;
+           height: 30px;
+       }
+       #date{
+           width: 295px;
+           height: 30px;
+       }
+       #num{
+        width: 292px;
+           height: 30px; 
+       }
+       #box{
+           display: flex;
+       }
+       #box1{
+           margin-left: 100px;
+           box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+       }
+       th{
+          background-color: white;
+       }
+       tr:nth-child(even){
+           background-color: rgb(129, 129, 129);
+       }
+       tr:nth-child(odd){
+           background-color: rgb(188, 205, 219);
+       }
+       th,td{
+           
+           padding: 10px;
+           text-align: center;
+           border-bottom: 1px solid black;
+       }
+       #btn{
+           padding: 10px;
+           background-color: rgb(67, 170, 211);
+           color :black;
+           border-radius: 10px;
+       }
+    </style>
+</head>
+<body>
+    <h1>Create Tikets </h1>
+    <div id="box">
+          
+    <div id="container">
+        <form id="myform">
+          <label>Tiket Category</label>
+          <select id="select">
+              <option value="">--</option>
+              <option value="refund">refund</option>
+              <option value="item missing">item missing</option>
+              <option value="order status">order status</option>
+              <option value="delivery">delivery</option>
+              <option value="feedback">feedback</option>
+          </select>
+          <br>
+          <br>
+          <label>write Comment</label>
+          <textarea id="text" cols="37" rows="5"></textarea>
+          <br>
+          <br>
+          <label>Date</label>
+          <input id="date" type="date"/>
+          <br>
+          <br>
+          <label>Ticket Number</label>
+          <input id="num" type="number">
+          <br>
+          <br>
+          <input id="btn" type="submit"/>
+        </form>
+    </div>
+    <div id="box1">
+    <table>
+        <thead>
+            <tr>
+                <th>Ticket Category</th>
+                <th>Comment</th>
+                <th>Date</th>
+                <th>Ticket Num</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+</div>
+ 
+</body>
+</html>
+
+<script>
+
+document.querySelector("#myform").addEventListener("submit" , Ticket);
+var arr = JSON.parse(localStorage.getItem("karlo")) || [];
+display(arr);
+function Ticket(event){
+    event.preventDefault();
+
+    var cat = document.querySelector("#select").value;
+    var comm = document.querySelector("#text").value;
+    var date = document.querySelector("#date").value;
+    var num = document.querySelector("#num").value;
+
+    var dataObj = {
+        cat: cat,
+        comm: comm,
+        date: date,
+        num: num   
+    };
+  arr.push(dataObj);
+  console.log(arr);
+localStorage.setItem("karlo" , JSON.stringify(arr));
+
+display(arr);
+}
+
+function display(arr){
+    document.querySelector("tbody").innerHTML= "";
+  arr.map(function (elem,index){
+      
+    var row = document.createElement("tr");
+    var td1 = document.createElement("td");
+    td1.textContent = elem.cat;
+    console.log(td1);  
+
+
+    var td2 = document.createElement("td");
+    td2.textContent = elem.comm;
+
+    var td3 = document.createElement("td");
+    td3.textContent = elem.date;
+
+    var td4 = document.createElement("td");
+    td4.textContent = elem.num;
+
+    var td5 = document.createElement("td");
+    td5.textContent = "Delete";
+    td5.addEventListener("click" , function(){
+        deleterow(index);
+    });
+
+    row.append(td1,td2,td3,td4,td5)
+
+document.querySelector("tbody").append(row);
+
+
+  })
+}
+function deleterow(index){
+      arr.splice(index,1);
+      localStorage.setItem("karlo" , JSON.stringify(arr));
+      display(arr);
+  }
+
+</script>

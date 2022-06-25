@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 75% ;
+            border: 1x solid transparent;
+            height: 300px;
+            display: grid;
+            grid-gap:10px;
+            grid-template-columns: repeat(4,20%);
+            grid-template-rows: 300px;
+            margin: auto;
+            margin-top: 200px;
+        }
+        #container>div{
+            border: 1px solid transparent;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        }
+       h3,p{
+           text-align: center;
+           font-family: Verdana, Geneva, Tahoma, sans-serif;
+           line-height: 15px;
+           
+       }
+      @media only screen and (min-width:0px) and (max-width:375px){
+             #container{
+              grid-template-columns: 250px;
+             }
+             
+           } 
+           @media only screen and (min-width:375px) and (max-width:778px){
+             #container{
+              grid-template-columns:200px 200px;
+             }
+             
+           } 
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="box1">
+            <img id="i1" height="70%" width="100%">
+            <h3 id="h31"></h3>
+            <p id="p1"></p>
+        </div>
+        <div id="box2">
+            <img id="i2" height="70%" width="100%">
+            <h3 id="h32"></h3>
+            <p id="p2"></p>
+        </div>
+        <div id="box3">
+            <img id="i3" height="70%" width="100%">
+            <h3 id="h33"></h3>
+            <p id="p3"></p>
+        </div>
+        <div id="box4">
+            <img id="i4" height="70%" width="100%">
+            <h3 id="h34"></h3>
+            <p id="p4"></p>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+ 
+
+
+ var data = [
+    {
+      
+      name: "Ankush Sachdeva",
+      image: "https://d27028dliefpk3.cloudfront.net/assets/our-investors/ankush-sachdeva-sharechat.jpg",
+      role: "Co-founder and CEO, ShareChat"
+    },
+    {
+      
+      name: "Bhanu Pratap Singh",
+      image: "https://d27028dliefpk3.cloudfront.net/assets/our-investors/bhanu-pratap-singh-sharechat.jpg",
+      role: "Co-founder and CTO, ShareChat"
+    },
+    {
+      
+      name: "Farid Ahsan",
+      image: "https://d27028dliefpk3.cloudfront.net/assets/our-investors/farid-ahsan-sharechat.png",
+      role: "Co-founder and COO, ShareChat"
+    },
+    {
+      
+        name: "Amit Kumar Agarwal",
+        image: "https://d27028dliefpk3.cloudfront.net/assets/our-investors/amit-kumar-agarwal-nobroker.jpg",
+        role: "Founder and CEO, NoBroker"
+      }
+    
+  ];
+
+    var x = document.querySelector("#box1");
+    document.querySelector("#i1").setAttribute("src" , "https://d27028dliefpk3.cloudfront.net/assets/our-investors/ankush-sachdeva-sharechat.jpg" )
+    document.querySelector("#h31").textContent = "Ankush Sachdeva";
+    document.querySelector("#p1").textContent = "Co-founder and CEO, ShareChat";
+
+    document.querySelector("#i2").setAttribute("src" , "https://d27028dliefpk3.cloudfront.net/assets/our-investors/bhanu-pratap-singh-sharechat.jpg" )
+    document.querySelector("#h32").textContent = "Bhanu Pratap Singh";
+    document.querySelector("#p2").textContent = "Co-founder and CTO, ShareChat";
+
+    document.querySelector("#i3").setAttribute("src" , "https://d27028dliefpk3.cloudfront.net/assets/our-investors/farid-ahsan-sharechat.png" )
+    document.querySelector("#h33").textContent = "Farid Ahsan";
+    document.querySelector("#p3").textContent = "Co-founder and COO, ShareChat";
+
+    document.querySelector("#i4").setAttribute("src" , "https://d27028dliefpk3.cloudfront.net/assets/our-investors/amit-kumar-agarwal-nobroker.jpg" )
+    document.querySelector("#h34").textContent = "Amit Kumar Agarwal";
+    document.querySelector("#p4").textContent = "Founder and CEO, NoBroker";
+</script>

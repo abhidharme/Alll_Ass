@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+     
+    <input type="text" placeholder=" Enter Birth Of Year" />
+   <select id="gender">
+       <option value="">--</option>
+   <option value="Male">M</option>
+   <option value="Female">F</option>
+</select>
+ <hr>
+ 
+ <button onclick="fun1()">Submit</button>
+</lang=>
+</body>
+</html>
+
+<script>
+    function fun1(){
+        var X = document.querySelector("input").value;
+         var Y = document.querySelector("#gender").value;
+         var sum = 2021-X;
+        //  alert(Y)
+         if((Y=="Male" && sum>=21) || (Y=="Female" && sum>=18)){
+            alert("Yes")
+           
+         }
+        else if(sum<=18){
+            alert("Not");
+        }
+    }
+</script>

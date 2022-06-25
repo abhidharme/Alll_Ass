@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #box2>tbody:nth-child(even) {background-color: #ec7474;}
+        table{
+            width: 100%;
+            text-align: center;
+        }
+        td,th{
+            
+            margin-left: 0px;
+            border: 1px double rgb(250, 250, 250);
+
+        }
+        h1{
+            color: rgb(0, 162, 255);
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .box{
+            display: flex;
+        }
+        #box1{
+            border: 1px solid transparent;
+            width: 250px;
+            height: 500px;
+            margin: 50px;
+            
+        }
+        #cat{
+            width: 250px;
+            height: 25px;
+            margin-bottom: 30px;
+        }
+        #title{
+            width: 242px;
+            height: 25px;
+            margin-bottom: 30px;
+        }
+        #area{
+            width: 245px;
+            
+            margin-bottom: 25px;
+        }
+        #price{
+            width: 242px;
+            height: 25px;
+            margin-bottom: 25px;
+        }
+        #box2{
+            margin:45px 150px;
+            width: 500px;
+        }
+        #btn{
+            font-size: 35px;
+           width: 120px;
+            border-radius: 15px;
+            background-color: rgb(14, 180, 245);
+            color: white;
+        }
+            
+    </style>
+</head>
+<body>
+    <div class="box">
+    <div id="box1">
+    <form id="myform">
+        <div cliss="add"></div>
+        <h1>Add Product</h1>
+        <hr>
+        <label>Category</label>
+        <select id="cat" >
+            <option value="">---</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Furniture">Furniture</option>
+            <option value="Home appliances">Home appliances</option>
+            <option value="Fashiob">Fashion</option>
+            <option value="Sports,Fitness">Sports,Fitness</option>
+            <option value="Grocery">Grocery</option>
+            <option value="Video Games"></option>
+        </select>
+        <label>Title</label>
+        <input id="title" type="text" placeholder="som new" />
+        <label>Description</label>
+        <textarea id="area" cols="24" rows="5"></textarea>
+        <label>Price</label>
+        <input id="price" type="number" placeholder="Enter Price" />
+        <input id="btn" type="submit" value="Add"/>
+    </form>
+
+</div>
+<div id="box2">
+        <h1>Product Info</h1>
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Category</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>price</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        
+    </div>
+</div>
+</body>
+</html>
+<script>
+    document.querySelector("#myform").addEventListener("submit" , addData);
+    
+    var myarr = JSON.parse(localStorage.getItem("products")) ||  [];
+    displayProduct(myarr);
+    function addData(event){
+        event.preventDefault();
+        var catrgory = document.querySelector("#cat").value;
+        var Title = document.querySelector("#title").value;
+        var Description = document.querySelector("#area").value;
+        var Price = document.querySelector("#price").value;
+
+        var bozazObj = {
+            itemcatrgory: catrgory,
+            itemTitle: Title,
+            itemDescription: Description,
+            itemPrice: Price,
+        };
+        console.log(bozazObj);
+        myarr.push(bozazObj);
+        console.log(myarr);
+
+        localStorage.setItem("products" , JSON.stringify(myarr));
+           
+       displayProduct(myarr);
+    }
+function displayProduct(myarr){
+
+    document.querySelector("tbody").innerHTML = "";
+
+    myarr.map(function (elem,index){
+
+var row = document.createElement("tr");
+
+var td1 = document.createElement("td");
+td1.textContent = index+1;
+
+var td2 = document.createElement("td");
+td2.textContent = elem.itemcatrgory;
+
+var td3 = document.createElement("td");
+td3.textContent = elem.itemTitle;
+console.log(td3);
+
+var td4 = document.createElement("td");
+td4.textContent = elem.itemDescription;
+
+var td5 = document.createElement("td");
+td5.textContent = elem.itemPrice;
+
+var td6 = document.createElement("td");
+td6.textContent = "Delete";
+td6.addEventListener("click" , function(){
+    deleteInfo(index)
+});
+
+
+
+row.append(td1,td2,td3,td4,td5,td6);
+
+document.querySelector("tbody").append(row);
+
+
+
+
+});
+}
+
+   function deleteInfo(index){
+       myarr.splice(index,1)
+       localStorage.setItem("products" , JSON.stringify(myarr));
+       displayProduct(myarr);
+   } 
+
+
+
+</script>

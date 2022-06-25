@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Gitcss/githome.css">
+    
+</head>
+<body>
+    <div id="container"></div>
+
+    <div id="main">
+        <button id="repobtn">Go to Repo</button>
+    </div>
+</body>
+</html>
+
+<script type="module">
+
+let responce;
+import navbar from "./scripts/githome.js";
+
+import gitUser from "./scripts/gitdata.js";
+
+let container = document.getElementById("container");
+container.innerHTML = navbar()
+
+let input = document.getElementById("searchgit");
+
+
+
+input.addEventListener("keypress" , searchUser);
+
+async function searchUser(event){
+    if(event.key == "Enter"){
+        let query = input.value;
+       
+
+         responce = await gitUser(query);
+         console.log(avtar)
+
+       var btn = document.getElementById("repobtn");
+       btn.addEventListener("click" , getRepo);
+
+         let {avatar_url} = responce
+
+         document.getElementById("p_img").src = avatar_url;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// button
+
+async function getRepo(){
+
+    let res = await fetch(responce.repos_url);
+    let repo_data = await res.json();
+  //  appenddata(repo_data);
+    console.log(repo_data);
+}
+
+function appenddata(arr){
+    arr.map((elem) => {
+
+var div1 = document.createElement("div");
+div1.setAttribute("id"  ,"div1");
+
+
+
+
+    })
+}
+
+
+</script>

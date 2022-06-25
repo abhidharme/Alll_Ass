@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+        }
+        #container{
+            border: 1px solid transparent;
+            width: 50%;
+            height: 500px;
+            
+        }
+        #id2{
+            border: 1px solid transparent;
+            width: 50%;
+            height: 400px;
+            display: grid;
+            grid-template-columns: repeat(2,300px);
+            margin-top: 50px;
+            background-color: orange;
+        }
+        #id3{
+            border: 1px solid transparent;
+            width: 100px;
+            height: 100px;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+        }
+        #pic{
+            border: 1px solid transparent;
+            width: 100%;
+            height: 90%;
+            margin-top: 30px;
+            
+        }
+        #inp{
+            width: 200px;
+        }
+        #id{
+            margin-left: 100%;
+        }
+        button{
+            background-color: black;
+            color: white;
+            width: 90%;
+        }
+       
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="inp">
+            <label>The HARBORD ROOM</label>
+        <input type="checkbox" id="id1" >
+        <div>
+        <label>MARBEN</label>
+        <input type="checkbox" id="id1"  onclick="food2()">
+    </div>
+    <div>
+        <label>THE STOCKYARDS</label>
+        <input type="checkbox" id="id1" onclick="food3()">
+    </div>
+    <div>
+        <label>The HARBORD ROOM</label>
+        <input type="checkbox" id="id1" onclick="food4()">
+    </div>
+        <button id="btn" onclick="getfood()">Order food</button>
+    </div>
+        <div id="pic">
+            <img src="https://i.pinimg.com/736x/b5/53/bd/b553bdeb40a3a4b0490876ca6290160d--burger-names-burgers.jpg">
+        </div>
+          
+        </div>
+        <h1>YOUR ORDERS:</h1>
+        <div id="id2">
+           
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+
+ var arr = JSON.parse(localStorage.getItem("dataMD")) || [];
+//var arr = [];
+document.querySelector("#id1").addEventListener("click" ,food1);
+
+function data(l){
+    this.url = l;
+};
+function food1(){
+var s1 = new data("https://www.bing.com/th?q=Delicious+Burger&w=100&h=100&c=7&o=5&pid=1.7&mkt=en-IN&cc=IN&setlang=en&adlt=moderate")
+arr.push(s1);
+
+}
+function food2(){
+var s2 = new data("https://th.bing.com/th/id/OIP.FsA81tyoKwRq5msz90HO3wHaE8?w=265&h=180&c=7&r=0&o=5&pid=1.7")
+arr.push(s2);
+
+}
+function food3(){
+var s3 = new data("https://th.bing.com/th/id/OIP.iAjz_LesbmMfztbYmcF1sgHaE7?w=286&h=191&c=7&r=0&o=5&pid=1.7")
+arr.push(s3);
+
+}
+
+function food4(){
+var s4 = new data("https://th.bing.com/th/id/OIP.ZMZhVCUlOmMAdKu8emXmWQHaEK?w=324&h=182&c=7&r=0&o=5&pid=1.7")
+arr.push(s4);
+
+}
+
+
+
+
+localStorage.setItem("dataMD" , JSON.stringify(arr));
+console.log(arr);
+
+function getfood(){
+function display(arr){
+    document.querySelector("#id2").textContent="";
+
+    var myarr = new Promise(function(resolve,reject){
+        resolve("Order conform , please wait")
+   
+arr.map(function(elem){
+
+    // var W = document.createElement("p");
+    // W.textContent = "wait...";
+    // document.querySelector("#id7").append(W);
+
+    setTimeout(function(){
+        var image = document.createElement("img");
+  
+  image.setAttribute("src" , elem.url);
+
+  var X = document.createElement("div");
+  X.setAttribute("id" , "id3");
+  X.append(image);
+
+  var promise = new Promise(function(resolve,reject){
+    document.querySelector("#id2").append(X);
+    resolve("Your Order is ready");
+  });
+  
+  promise.then(function(res){
+    alert(res);
+});
+    },5000)
+    
+    
+});
+});
+
+myarr.then(function(res){
+    alert(res);
+});
+
+
+}
+
+display(arr);
+}
+
+
+</script>

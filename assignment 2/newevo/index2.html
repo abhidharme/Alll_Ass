@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-9">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhijeet</title>
+    <style>
+        #container{
+            width: 70%;
+            height: 600px;
+            margin: auto;
+        }
+        #box{
+            border: 1px solid green;
+            width: 92%;
+            height: 30px;
+            margin: auto;
+            margin-top: 25px;
+        }
+        #home{
+
+            margin-left: 76%;
+        }
+       #box>button{
+            border: 0px;
+            margin-top: 5px;
+            
+            background-color: white;
+        }
+        input{
+            margin-top: 20px;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1>login</h1>
+    <div id="container">
+            <div id="box">
+                <button id="home" onclick="gohome()">Menu</button>
+                <button id="login" onclick="gologin()">Login</button>
+                <button id="signup" onclick="gosign()">Sign Up</button>
+            </div>
+            <form id="loginform">
+                <input type="text" id="emailid"/>
+                <input type="text" id="password"/>
+                <button>Login</button>
+            </form>
+    </div>
+</body>
+</html>
+
+<script>
+
+    var logindata = JSON.parse(localStorage.getItem("signdata"));
+
+
+    document.querySelector("#loginform").addEventListener("submit" , loginpage);
+
+    function loginpage(event) {
+        event.preventDefault();
+               var a = document.getElementById("emailid").value;
+               var b= document.getElementById("password").value;
+      
+               for(var i=0 ; i<logindata.length ; i++){
+                   if((a == logindata[i].email) && (b == logindata[i].pass)){
+                       window.location.href = "index3.html";
+                       console.log(a,b);
+                   }
+                   else{
+                       alert("Enter Correct Details");
+                       break;
+                   }
+               }
+              
+
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+    function gosign() {
+        window.location.href = "index.html";
+    }
+    function gohome() {
+        window.location.href = "index3.html";
+    }
+</script>

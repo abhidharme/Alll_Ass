@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://kit.fontawesome.com/683b4b40e3.js"
+    crossorigin="anonymous"
+    >
+    </script>
+    <style>
+        #div1{
+            
+            border: 1px solid transparent;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap: 15px;
+            /* overflow: auto; */
+        }
+        #div3{
+            height: 250px;
+            font-size: 15px;
+          
+        }
+
+        /* iframe{
+            height: 100%;
+            width: 100%;
+        } */
+        body{
+            display: flex;
+            width: 100%;
+        }
+
+        #box2{
+            border: 1px solid transparent;
+            width: 80px;
+            height: 400px;
+        }
+        #box1{
+            
+           width: 95%;
+            height: 100px;
+        }
+        #id1{
+            border: 1px solid rgb(168, 168, 168);
+            width: 50%;
+            height: 42px;
+            margin-top: 33px;
+            margin-left: 40px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+            font-size: 18px;
+            
+        }
+        #btn{
+            border: 1px solid rgb(168, 168, 168);
+            width: 5%;
+           
+            height: 46px;
+            margin-top: 33px;
+            
+
+        }
+        #thumb{
+            width: 100%;
+            height: 70%;
+        }
+        #Yimg{
+            margin-top: 20px;
+        }
+        #inputdiv{
+            display: flex;
+        }
+        #logo{
+          
+             font-size: 23px;
+        }
+        #Y{
+            margin-left: 20px;
+            margin-top: 36px;
+        }
+        #home{
+            margin-top: 35px;
+            
+            font-size: 35px;
+        }
+        p{
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            
+        }
+        #b{
+            border: 3px solid black;
+            width: 40px;
+            height: 25px;
+            margin: auto;
+            margin-top: 35px;
+        }
+        #c{
+            border: 3px solid black;
+            width: 14px;
+            padding: 10px;
+            margin: auto;
+            margin-top: 35px;
+        }
+        #h{
+            margin-top: 4px;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="box2">
+        <img id="Y" src="https://th.bing.com/th/id/OIP.dmkNDDHH5JxHXzP92Ohm1gHaHa?pid=ImgDet&rs=1" height="30px" width="30px"/>
+        <p><i id="home" class="fas fa-home"></i></p>
+        <p id="pp">Home</p>
+        <p><i id="home" class="far fa-compass "></i></p>
+        <p>Explore</p>
+        <p id="b"><i id="h" class="fas fa-play"></i></p>
+        <p>Subscriptions</p>  
+        <p id="c"><i id="h" class="fas fa-play"></i></p>
+        <p>Library</p>
+
+    </div>
+    <div id="box1">
+        <div id="inputdiv">
+        <img id="Yimg" src="https://www.bing.com/th?id=OIP.bU0knxreaQXt5Lv8DNTY_wHaEK&w=176&h=99&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" height="70px" width="120px"/>
+<input type="text" id="id1" placeholder="Search">
+<button id="btn" onclick="videosearch()"><i id="logo" class="fas fa-search"></i></button>
+</div>
+<hr>
+
+<div id="div1"></div>
+</div>
+
+<!-- <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/KXFmaE5B9E8"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe> -->
+
+</body>
+</html>
+
+
+<script>
+    
+let API = "AIzaSyD_JXPK8OCGC00zOEwbbKnd780sHgX5IH8"
+let myvideo = document.getElementById("div1");
+let darr = [tesla];
+
+
+async function searchpopular(a){
+        try{
+          
+          
+         
+            let responce = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${a}&type=video&key=${API}&maxResults=32&part=snippet`);
+          let data = await responce.json();
+          let videodata = data.items;
+          console.log(videodata)
+          videodata.map(function({snippet,id:{videoId}}){ 
+          var div3 = document.createElement("div");
+             div3.setAttribute("id" , "div3")
+
+var Title = document.createElement("p");
+Title.textContent = snippet.title;
+
+
+
+var thumbnails = document.createElement("img");
+thumbnails.src = snippet.thumbnails.medium.url;
+thumbnails.setAttribute("id" , "thumb");
+
+
+div3.append(thumbnails,Title);
+document.getElementById("div1").append(div3);
+
+let data_to_send = {
+    snippet,
+    videoId
+};
+
+div3.onclick = () =>{
+    showVideo(data_to_send);
+}
+})
+        }
+
+        catch(err){
+            console.log(err);
+        }
+
+        function showVideo(data){
+    localStorage.setItem("clicked_video" , JSON.stringify(data));
+
+    window.location.href = "video.html";
+}
+
+  
+    }
+
+
+
+    searchpopular("PoplarToday");
+
+
+
+
+
+
+
+
+
+
+// https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${video_query}&type=video&key=${API}&maxResults=20
+    async function videosearch(){
+        try{
+          
+          
+            let video_query = document.getElementById("id1").value;
+            darr.push(video_query);
+            let responce = await fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${video_query}&type=video&key=${API}&maxResults=32&part=snippet`);
+          let data = await responce.json();
+          localStorage.setItem("newarr" , JSON.stringify(darr));
+        // console.log(data);
+          let videodata = data.items;
+       
+        //  localStorage.setItem("abhi" , JSON.stringify(darr));
+          //console.log(videodata);
+         appendVideos(videodata);
+        }
+
+        catch(err){
+            console.log(err);
+        }
+
+
+    }
+
+
+
+
+
+//     function recom(darr){
+//     localStorage.setItem("abhi" , JSON.stringify(darr));
+//     console.log("dd",darr);
+//     //window.location.href = "video.html";
+// }
+
+
+
+    const appendVideos =(arr) =>{
+        
+        
+        document.getElementById("div1").innerHTML = "";
+        arr.forEach(({snippet,id:{videoId}}) => {
+
+            
+// let {
+//     id: {videoId},
+// } = elem; 
+
+// console.log("id",videoId);
+
+// var iframe = document.createElement("iframe");
+// iframe.src = `https://www.youtube.com/embed/${videoId}`;
+//iframe.setAttribute("allowfullscreen" , "true");
+
+var div3 = document.createElement("div");
+             div3.setAttribute("id" , "div3")
+
+var Title = document.createElement("p");
+Title.textContent = snippet.title;
+
+
+
+var thumbnails = document.createElement("img");
+thumbnails.src = snippet.thumbnails.medium.url;
+thumbnails.setAttribute("id" , "thumb");
+
+
+div3.append(thumbnails,Title);
+document.getElementById("div1").append(div3);
+
+
+    
+
+
+let data_to_send = {
+    snippet,
+    videoId
+};
+
+div3.onclick = () =>{
+    showVideo(data_to_send);
+}
+
+// div3.onclick = () =>{
+//     recom({snippet});
+// }
+
+        });  
+    }
+
+function showVideo(data){
+    localStorage.setItem("clicked_video" , JSON.stringify(data));
+
+    window.location.href = "video.html";
+}
+
+
+
+    
+
+</script>
